@@ -1,0 +1,631 @@
+@media only screen and (max-width:1600px) {
+    h3,
+    .h3 {
+        font-size: 18px;
+    }
+    .padBlock {
+        padding: 20px;
+    }
+    #navbar {
+        padding: 20px;
+    }
+    .navbar-right {
+        .ac-links {
+            margin-left: 15px;
+            ul {
+                li {
+                    margin-left: 15px;
+                }
+            }
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            margin-right: 5px;
+        }
+    }
+    .session-info {
+        .sep {
+            padding: 0 5px;
+        }
+    }
+    .main {
+        margin: 130px 0 0px 306px;
+    }
+    .txt-editor {
+        .btn {
+            padding: 4px 6px;
+            font-size: 13px;
+        }
+    }
+}
+
+@media only screen and (max-width:1500px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:1400px) {
+    body,
+    .form-control {
+        font-size: 13px;
+    }
+    h3,
+    .h3 {
+        font-size: 16px;
+    }
+    .questions-counter-block {
+        .counter-yellow {
+            padding: 30px 10px;
+        }
+        h2 {
+            font-size: 16px;
+        }
+    }
+    .sidebar {
+        width: 260px;
+    }
+    .footer {
+        padding-left: 260px;
+    }
+    .navbar-fixed-top,
+    .navbar-fixed-bottom {
+        left: 265px;
+    }
+    .navbar-right {
+        .ac-links {
+            margin-left: 10px;
+            ul {
+                li {
+                    margin-left: 10px;
+                }
+            }
+        }
+        .avatar {
+            width: 35px;
+            height: 35px;
+            margin-right: 5px;
+        }
+    }
+    .main {
+        margin-left: 246px;
+    }
+    .sidebar-nav {
+        padding: 30px 10px 10px;
+        li {
+            font-size: 12px;
+            .arrow {
+                margin-top: -4px;
+            }
+            .icon {
+                margin-right: 5px;
+            }
+        }
+    }
+    .block-title {
+        padding: 10px 15px;
+    }
+    body .alerts-table .block-content {
+        padding: 20px 15px 5px;
+    }
+    .login-left {
+        h1 {
+            font-size: 50px;
+        }
+        h3 {
+            font-size: 22px;
+        }
+    }
+    .splash-logo {
+        padding: 0 20px
+    }
+    .login-right {
+        .container {
+            max-width: 80%;
+        }
+    }
+    .icon+.icon {
+        margin-left: 8px;
+    }
+    .txt-editor {
+        .btn {
+            padding: 4px 5px;
+            font-size: 13px;
+        }
+    }
+}
+
+@media only screen and (max-width:1279px) {
+    .navbar-header {
+        display: none;
+    }
+    .header-blue {
+        padding: 15px 30px 15px 60px;
+        .sep {
+            margin: 0 10px;
+        }
+    }
+    .menu-btn {
+        display: block;
+        font-size: 10px;
+        text-align: center;
+    }
+    #navbar {
+        padding: 10px 20px;
+    }
+    .navbar-left {
+        width: 100%;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+    .session-info {
+        padding-top: 0;
+    }
+    .navbar-right {
+        width: 100%;
+        text-align: right;
+    }
+    .sidebar {
+        left: -265px;
+        transition: left 0.5s ease;
+        top: 145px;
+        .logo {
+            display: none;
+        }
+    }
+    .nav-open {
+        .sidebar {
+            left: 0;
+        }
+    }
+    .navbar-fixed-top,
+    .navbar-fixed-bottom {
+        left: 0;
+        .container-fluid {
+            .logo {
+                max-width: 94px;
+                padding: 5px;
+                position: absolute;
+                display: block;
+                border: 0;
+            }
+        }
+    }
+    .main {
+        margin-left: 0;
+    }
+    .footer {
+        padding-left: 0;
+    }
+    .btn {
+        min-width: 100px;
+    }
+}
+
+@media only screen and (max-width:1199px) {
+    .equalHeightRow {
+        .equalHeightCol {
+            &:nth-child(1),
+            &:nth-child(2) {
+                .heightEqualizerStrip {
+                    max-width: calc( 50% - 30px);
+                    min-width: calc( 50% - 30px);
+                }
+            }
+            &:nth-child(3) {
+                border-top: 15px solid $gray;
+                .heightEqualizerStrip {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .col-xs-1,
+    .col-sm-1,
+    .col-md-1,
+    .col-lg-1,
+    .col-xs-2,
+    .col-sm-2,
+    .col-md-2,
+    .col-lg-2,
+    .col-xs-3,
+    .col-sm-3,
+    .col-md-3,
+    .col-lg-3,
+    .col-xs-4,
+    .col-sm-4,
+    .col-md-4,
+    .col-lg-4,
+    .col-xs-5,
+    .col-sm-5,
+    .col-md-5,
+    .col-lg-5,
+    .col-xs-6,
+    .col-sm-6,
+    .col-md-6,
+    .col-lg-6,
+    .col-xs-7,
+    .col-sm-7,
+    .col-md-7,
+    .col-lg-7,
+    .col-xs-8,
+    .col-sm-8,
+    .col-md-8,
+    .col-lg-8,
+    .col-xs-9,
+    .col-sm-9,
+    .col-md-9,
+    .col-lg-9,
+    .col-xs-10,
+    .col-sm-10,
+    .col-md-10,
+    .col-lg-10,
+    .col-xs-11,
+    .col-sm-11,
+    .col-md-11,
+    .col-lg-11,
+    .col-xs-12,
+    .col-sm-12,
+    .col-md-12,
+    .col-lg-12 {
+        margin-bottom: 15px;
+        &.padT25,
+        &.padT20,
+        &.padT30 {
+            padding-top: 0;
+        }
+    }
+    .table>thead>tr>th,
+    .table>thead>tr>td,
+    .table>tbody>tr>th,
+    .table>tbody>tr>td,
+    .table>tfoot>tr>th,
+    .table>tfoot>tr>td {
+        padding: 8px 5px;
+    }
+    .questions-counter-block {
+        .counter-yellow {
+            position: static;
+            padding: 20px 10px;
+        }
+        h2 {
+            padding: 10px 15px;
+        }
+    }
+    .equalHeightParent .equalHeightChild .bg-white {
+        min-height: 10px;
+        height: auto!important;
+        h2 {
+            text-align: left;
+        }
+    }
+    .main {
+        padding: 20px 0;
+        margin-top: 146px;
+    }
+    .row {
+        &.marB25,
+        &.marB30,
+        &.marB40,
+        &.marB50 {
+            margin-bottom: 0;
+        }
+    }
+    .visibly-hidden {
+        display: none;
+    }
+    .login-splash {
+        display: block;
+        position: static;
+        min-height: 100vh;
+    }
+    .login-left {
+        display: block;
+        width: 100%;
+        border-right: 0;
+        border-bottom: 5px solid $yellow;
+        max-width: 100%;
+        height: auto;
+        padding: 20px;
+        .welcome-text {
+            padding-bottom: 20px;
+        }
+    }
+    .login-right {
+        display: block;
+        height: auto;
+        width: 100%;
+        padding: 20px;
+    }
+    .splash-logo {
+        img {
+            max-width: 200px;
+        }
+    }
+    .equalHeightRow {
+        .equalHeightCol {
+            &:nth-child(3) {
+                border-top: 0;
+            }
+        }
+        .heightEqualizerStrip {
+            display: none;
+        }
+    }
+    .bg-white.padB20 {
+        padding-bottom: 0;
+    }
+    div[class*="col-"].text-right {
+        text-align: left;
+    }
+    .status-indicator {
+        margin-left: 0;
+    }
+    .icon+.icon {
+        margin-left: 10px;
+    }
+    .padBlock {
+        padding: 15px;
+    }
+    .status-text {
+        min-width: 55px;
+    }
+    .form-control.w50 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .text-right {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    h1,
+    .h1 {
+        font-size: 27px;
+    }
+    body,
+    .form-control {
+        font-size: 12px;
+    }
+    .navbar-right {
+        .ac-links {
+            ul {
+                li {
+                    a {
+                        font-size: 0;
+                        .icon {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .navbar-fixed-top,
+    .navbar-fixed-bottom {
+        .container-fluid {
+            .logo {
+                max-width: 100%;
+                text-align: center;
+                position: static;
+                img {
+                    max-width: 80px;
+                }
+            }
+        }
+    }
+    .session-info {
+        font-size: 12px;
+        .sub-label {
+            padding-left: 5px;
+        }
+        h5 {
+            font-size: 12px;
+        }
+    }
+    body .alerts-table .block-content {
+        padding: 10px;
+    }
+    body .alerts-table table tbody td {
+        padding: 5px;
+    }
+    .navbar-left {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .navbar-right {
+        text-align: center;
+        .user-block {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            max-width: 40%;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            .avatar {
+                width: 25px;
+                height: 25px;
+            }
+            .user-name {
+                max-width: none;
+                text-overflow: unset;
+                display: initial;
+            }
+        }
+        .ac-links {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            border: 0;
+            margin: 0;
+        }
+    }
+    #navbar {
+        padding: 0 10px;
+    }
+    .session-info {
+        .sep {
+            padding: 0 3px;
+        }
+    }
+    .main {
+        margin-top: 183px;
+    }
+    .sidebar {
+        top: 158px;
+    }
+    .sidebar-nav {
+        max-height: calc(100vh - 200px);
+    }
+    .block-title,
+    .padBlock {
+        padding: 10px;
+    }
+    .login-left {
+        padding: 10px 20px;
+        .welcome-text {
+            padding-bottom: 10px;
+        }
+        h1 {
+            font-size: 30px;
+        }
+        h3 {
+            font-size: 15px;
+        }
+    }
+    .splash-logo {
+        img {
+            max-width: 120px;
+        }
+    }
+    .login-right {
+        .container {
+            max-width: 95%;
+        }
+        h2 {
+            font-size: 30px;
+            margin: 0;
+        }
+        .marB50 {
+            margin-bottom: 20px;
+        }
+    }
+    .responsive-table1 {
+        tbody {
+            tr {
+                td {
+                    display: block;
+                    width: 100%;
+                    float: left;
+                    &:first-child {
+                        border-bottom: 0;
+                    }
+                    &.two-btn-width {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .pagination>li {
+        margin: 0 3px;
+    }
+    .pagination>li>a,
+    .pagination>li>span {
+        padding: 0 5px;
+    }
+    .responsive-table {
+        overflow: auto;
+    }
+    .txt-editor {
+        padding: 10px;
+        .btn-wrap {
+            margin-top: 0;
+        }
+    }
+    .btn-wrap .btn-group {
+        margin-bottom: 5px;
+    }
+    .table>thead>tr>th.actions {
+        min-width: 62px;
+    }
+    .btn {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    .btn+.btn {
+        margin-left: 10px;
+    }
+    .question-row {
+        padding-left: 27px;
+        .ques-no {
+            font-size: 14px;
+        }
+    }
+    .header-blue .marquee {
+        max-height: 19px;
+    }
+    .request-btn {
+        font-size: 9px;
+        padding: 5px;
+        margin-top: -2px;
+        i {
+            margin-left: 1px;
+        }
+    }
+    div.tree-multiselect>div.selected,
+    div.tree-multiselect>div.selections {
+        width: 100%;
+    }
+    .nav>li>a {
+        padding: 8px 10px;
+    }
+    .treeList {
+        max-width: 100%;
+        h4 {
+            font-size: 12px;
+        }
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .user-block {
+        font-size: 11px;
+    }
+    .session-info {
+        font-size: 11px;
+        h5 {
+            display: block;
+            &+.sep {
+                display: none;
+            }
+        }
+    }
+    .main {
+        margin-top: 172px;
+    }
+    .sidebar {
+        top: 169px;
+    }
+    .login-left {
+        h3 {
+            font-size: 13px;
+        }
+    }
+    .txt-editor {
+        .btn-wrap {
+            text-align: center;
+            // .btn-group {
+            //     width: 30%;
+            // }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+ <table>
+
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left' valign='top'>
+			Hi ${firstName} ${lastName},
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left'>
+			<p>Below are your login credential to login into DRDO INMAS online portal. It is highly recommended that you change your password and profile post login.</p>
+		</td>
+	</tr>
+
+		
+
+	<tr>
+		<td align='left' valign='top'>
+			User Name: ${email}
+		</td>
+	</tr>
+	<tr>
+		<td align='left' valign='top'>
+			Password : ${password}
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td align='left' valign='top'>
+		
+			<a href='${domain}/drdo/login' target='_blank'>Login here</a>
+		</td>
+	</tr>
+
+	<tr>
+		
+		<td>With Regards,<br/>
+	
+		    DRDO web portal admin</td>
+	</tr>
+	
+</table>

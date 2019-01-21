@@ -1,0 +1,54 @@
+ <table>
+
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left' valign='top'>
+			Hi ${profile.firstName} ${profile.lastName},
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left' valign='top'>
+			You have requested to reset your password. Please click on the link below to reset.
+		</td>
+	</tr>
+
+		
+
+<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	
+	
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td align='left' valign='top'>
+		
+			<a href='${domain}${resetURL}' target='_blank'>Reset password </a>
+		</td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr><tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	
+</table>

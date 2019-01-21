@@ -1,0 +1,68 @@
+.login-splash {
+    background: url("#{$image-path}/splash-bg.png") repeat 0 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: table;
+    table-layout: fixed;
+}
+
+.login-left {
+    display: table-cell;
+    width: 30%;
+    max-width: 580px;
+    height: 100%;
+    background: white;
+    vertical-align: top;
+    padding-top: 5%;
+    border-right: 8px solid $yellow;
+    .welcome-text {
+        padding-bottom: 10vh;
+    }
+    h1 {
+        font-size: 70px;
+        margin: 0;
+    }
+    h3 {
+        @extend .ff-museo-regular;
+        margin: 0;
+        font-size: 27px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+.login-right {
+    display: table-cell;
+    width: 75%;
+    height: 100%;
+    vertical-align: middle;
+    h2 {
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+    .container {
+        max-width: 810px;
+    }
+    .c-yellow {
+        &:hover,
+        &:focus {
+            color: $yellow;
+            text-decoration: underline;
+        }
+    }
+    label.control-label {
+        @extend .ff-museo-bold;
+    }
+}
+
+.login-form {
+    min-height: 340px;
+    .row {
+        .help-block {
+            margin-bottom: 0;
+        }
+    }
+}

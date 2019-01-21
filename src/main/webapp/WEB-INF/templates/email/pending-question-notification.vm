@@ -1,0 +1,64 @@
+ <table>
+
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left' valign='top'>
+			Hi ${firstName} ${lastName},
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left'>
+			<p>Below question is pending for your formation. Please help to do the needful on urgent basis.</p>
+		</td>
+	</tr>
+
+		
+
+	<tr>
+		<td align='left' valign='top'>
+			Question Id: ${questionId}
+		</td>
+	</tr>
+	
+	<tr>
+		<td align='left' valign='top'>
+			Need to be answered before : ${sla}
+		</td>
+	</tr>
+	<tr>
+		<td align='left' valign='top'>
+			Question : ${question}  <a href='http://121.243.75.240:8080/pq/login.html' target='_blank'>Read more</a>
+		</td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td align='left' valign='top'>
+		
+			
+		</td>
+	</tr>
+
+	<tr>
+		
+		<td>With Regards,<br/>
+	
+		    Parliamentary questionnaire portal team</td>
+	</tr>
+	
+</table>

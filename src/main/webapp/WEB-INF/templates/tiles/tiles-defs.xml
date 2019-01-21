@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC 
+		"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+		"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- Default Main Template -->
+	<definition name=".base.definition" template="/WEB-INF/templates/jsp/main.jsp">
+		<put-attribute name="title" value="INMAS" type="string" />
+		<put-attribute name="header" value="/WEB-INF/templates/jsp/header.jsp" />
+		<put-attribute name="leftnav" value="/WEB-INF/templates/jsp/leftnav.jsp" />
+		<put-attribute name="rightnav" value="/WEB-INF/templates/jsp/rightnav.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/templates/jsp/footer.jsp" />
+		<put-attribute name="content" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav"
+			value="/WEB-INF/templates/jsp/mobile-nav.jsp" />
+	</definition>
+	<definition name=".base.definition.dept" template="/WEB-INF/templates/jsp/main.jsp">
+		<put-attribute name="title" value="INMAS" type="string" />
+		<put-attribute name="header" value="/WEB-INF/templates/jsp/header.jsp" />
+		<put-attribute name="leftnav" value="/WEB-INF/templates/jsp/deptleftnav.jsp" />
+		<put-attribute name="rightnav" value="/WEB-INF/templates/jsp/rightnav.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/templates/jsp/footer.jsp" />
+		<put-attribute name="content" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav"
+			value="/WEB-INF/templates/jsp/mobile-nav.jsp" />
+	</definition>
+	<definition name=".base.definition.division" template="/WEB-INF/templates/jsp/main.jsp">
+		<put-attribute name="title" value="INMAS" type="string" />
+		<put-attribute name="header" value="/WEB-INF/templates/jsp/header.jsp" />
+		<put-attribute name="leftnav" value="/WEB-INF/templates/jsp/divisionleftnav.jsp" />
+		<put-attribute name="rightnav" value="/WEB-INF/templates/jsp/rightnav.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/templates/jsp/footer.jsp" />
+		<put-attribute name="content" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav"
+			value="/WEB-INF/templates/jsp/mobile-nav.jsp" />
+	</definition>
+	<definition name=".base.definition.group" template="/WEB-INF/templates/jsp/main.jsp">
+		<put-attribute name="title" value="INMAS" type="string" />
+		<put-attribute name="header" value="/WEB-INF/templates/jsp/header.jsp" />
+		<put-attribute name="leftnav" value="/WEB-INF/templates/jsp/groupleftnav.jsp" />
+		<put-attribute name="rightnav" value="/WEB-INF/templates/jsp/rightnav.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/templates/jsp/footer.jsp" />
+		<put-attribute name="content" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav"
+			value="/WEB-INF/templates/jsp/mobile-nav.jsp" />
+	</definition>
+	<definition name=".base.definition.scientist" template="/WEB-INF/templates/jsp/main.jsp">
+		<put-attribute name="title" value="INMAS" type="string" />
+		<put-attribute name="header" value="/WEB-INF/templates/jsp/header.jsp" />
+		<put-attribute name="leftnav" value="/WEB-INF/templates/jsp/scientistleftnav.jsp" />
+		<put-attribute name="rightnav" value="/WEB-INF/templates/jsp/rightnav.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/templates/jsp/footer.jsp" />
+		<put-attribute name="content" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav"
+			value="/WEB-INF/templates/jsp/mobile-nav.jsp" />
+	</definition>
+	<definition name=".base.definition.cc" template="/WEB-INF/templates/jsp/main.jsp">
+		<put-attribute name="title" value="INMAS" type="string" />
+		<put-attribute name="header" value="/WEB-INF/templates/jsp/header.jsp" />
+		<put-attribute name="leftnav"
+			value="/WEB-INF/templates/jsp/ccleftnav.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/templates/jsp/footer.jsp" />
+		<put-attribute name="content" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav"
+			value="/WEB-INF/templates/jsp/mobile-nav.jsp" />
+	</definition>
+	<definition name=".base.definition.nonsecure" template="/WEB-INF/templates/jsp/main.jsp">
+		<put-attribute name="title" value="DRDO" type="string" />
+		<put-attribute name="header" value="/WEB-INF/templates/jsp/header.jsp" />
+		<put-attribute name="leftnav" value="/WEB-INF/templates/jsp/leftnav_login.jsp" />
+		<put-attribute name="rightnav" value="/WEB-INF/templates/jsp/rightnav_login.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/templates/jsp/footer.jsp" />
+		<put-attribute name="content" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+	</definition>
+
+	<definition name="login" extends=".base.definition.nonsecure">
+		<put-attribute name="title" value="Login | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/login.jsp" />
+	</definition>
+
+	<definition name="admin/welcomeAdmin" extends=".base.definition">
+		<put-attribute name="title" value="Welcome | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/adminWelcome.jsp" />
+	</definition>
+	
+	<definition name="admin/getIPLogPage" extends=".base.definition">
+		<put-attribute name="title" value="IP Log | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/ipLog.jsp" />
+	</definition>
+	
+	<definition name="admin/getLoginLogPage" extends=".base.definition">
+		<put-attribute name="title" value="login Log| INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/loginLog.jsp" />
+	</definition>
+	
+	<definition name="admin/userManagementPage" extends=".base.definition">
+		<put-attribute name="title" value="Update Profile | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/userManagement.jsp" />
+	</definition>
+	
+	<definition name="admin/userManagementAdminPage" extends=".base.definition">
+		<put-attribute name="title" value="Update User Details | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/userManagementAdmin.jsp" />
+	</definition>
+	
+	<definition name="deptHead/userManagementZonePage" extends=".base.definition.dept">
+		<put-attribute name="title" value="Update User Details | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/userManagementZone.jsp" />
+	</definition>
+	
+	<definition name="deptHead/userManagementPage" extends=".base.definition.dept">
+		<put-attribute name="title" value="Update Profile | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/userManagement.jsp" />
+	</definition>
+	
+	<definition name="deptHead/registrationUpdateSuccess" extends=".base.definition.dept">
+		<put-attribute name="title" value="Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	
+	<definition name="division/userManagementPage" extends=".base.definition.division">
+		<put-attribute name="title" value="Update Profile | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/division/userManagement.jsp" />
+	</definition>
+
+	<definition name="cc/userManagementPage" extends=".base.definition.cc">
+		<put-attribute name="title" value="Update Profile | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/commissioner/userManagement.jsp" />
+	</definition>
+	
+	<definition name="admin/userList" extends=".base.definition">
+		<put-attribute name="title" value="User List | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/userDetailsList.jsp" />
+	</definition>
+	
+	<definition name="admin/resetPassword" extends=".base.definition">
+		<put-attribute name="title" value="Reset Password | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/resetAdminPassword.jsp" />
+	</definition>
+	
+	<definition name="deptHead/userList" extends=".base.definition.dept">
+		<put-attribute name="title" value="User List | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/userDetailsList.jsp" />
+	</definition>
+	
+	<definition name="deptHead/welcomeDeptHead" extends=".base.definition.dept">
+		<put-attribute name="title" value="Welcome | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/zoneWelcome.jsp" />
+	</definition>
+	
+	<definition name="deptHead/resetPassword" extends=".base.definition.dept">
+		<put-attribute name="title" value="Reset Password | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/resetZonalPassword.jsp" />
+	</definition>
+	
+	<definition name="zone/createDiary" extends=".base.definition.dept">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/createDiary.jsp" />
+	</definition>
+	
+	<definition name="zone/addUserDetailsPage" extends=".base.definition.dept">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/addDiaryUsers.jsp" />
+	</definition>
+	
+	<definition name="zone/fileCreatedPage" extends=".base.definition.dept">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/fileCreated.jsp" />
+	</definition>
+	
+	<definition name="zone/submitFilePage" extends=".base.definition.dept">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/submitFile.jsp" />
+	</definition>
+	
+	<definition name="cc/welcomeCC" extends=".base.definition.cc">
+		<put-attribute name="title" value="Welcome | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/commissioner/ccWelcome.jsp" />
+	</definition>
+	
+	<definition name="cc/resetPassword" extends=".base.definition.cc">
+		<put-attribute name="title" value="Reset Password | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/commissioner/resetComissionerPassword.jsp" />
+	</definition>
+	
+	<!-- <definition name="division/welcomeDivision" extends=".base.definition.division">
+		<put-attribute name="title" value="Welcome | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/division/divisionWelcome.jsp" />
+	</definition>
+	
+	<definition name="division/resetPassword" extends=".base.definition.division">
+		<put-attribute name="title" value="Reset Password | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/division/resetDivisonalPassword.jsp" />
+
+	</definition> -->
+
+	<definition name="admin/registerExecutive" extends=".base.definition">
+		<put-attribute name="title" value="Register New User | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/registerExecutive.jsp" />
+	</definition>
+	
+	<definition name="admin/createNewGroup" extends=".base.definition">
+		<put-attribute name="title" value="Create New Group | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/createNewGroup.jsp" />
+	</definition>
+	
+	<definition name="admin/editGroupPage" extends=".base.definition">
+		<put-attribute name="title" value="Create New Group | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/editGroup.jsp" />
+	</definition>
+	
+	<definition name="admin/groupListPage" extends=".base.definition">
+		<put-attribute name="title" value="Create New Group | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/groupList.jsp" />
+	</definition>
+	
+	<definition name="admin/deptList" extends=".base.definition">
+		<put-attribute name="title" value="Create New Department | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/departmentList.jsp" />
+	</definition>
+	
+	<definition name="admin/createNewDept" extends=".base.definition">
+		<put-attribute name="title" value="Create New Department | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/createNewDept.jsp" />
+	</definition>
+	
+	<definition name="admin/editDeptPage" extends=".base.definition">
+		<put-attribute name="title" value="Create New Department | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/editDept.jsp" />
+	</definition>
+	
+	<definition name="admin/createNewDivision" extends=".base.definition">
+		<put-attribute name="title" value="Create New Division | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/createNewDivision.jsp" />
+	</definition>
+	
+	<definition name="admin/divisionList" extends=".base.definition">
+		<put-attribute name="title" value="Create New Department | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/divisionList.jsp" />
+	</definition>
+	
+	<definition name="admin/editDivisionPage" extends=".base.definition">
+		<put-attribute name="title" value="Edit Division | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/editDivision.jsp" />
+	</definition>
+	
+	<definition name="zone/registerExecutive" extends=".base.definition.dept">
+		<put-attribute name="title" value="Register New User | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/zonal/registerExecutive.jsp" />
+	</definition>
+	<!-- Create Parliamentary Session -->
+
+
+	<!-- Create new Zone -->
+	<definition name="admin/zoneView" extends=".base.definition">
+		<put-attribute name="title" value="Create Zone | INMAS"
+			type="string" />
+		<put-attribute name="headWrap" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="web-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/newZone.jsp" />
+	</definition>
+	
+	<definition name="admin/zoneList" extends=".base.definition">
+		<put-attribute name="title" value="Zone List | INMAS"
+			type="string" />
+		<put-attribute name="headWrap" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="web-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/zoneList.jsp" />
+	</definition>
+	
+	<definition name="admin/commissionerateList" extends=".base.definition">
+		<put-attribute name="title" value="Commissionerate List | INMAS"
+			type="string" />
+		<put-attribute name="headWrap" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="web-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/commissionerateList.jsp" />
+	</definition>
+	<definition name="admin/divisionList" extends=".base.definition">
+		<put-attribute name="title" value="Division List | INMAS"
+			type="string" />
+		<put-attribute name="headWrap" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="web-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/divisionList.jsp" />
+	</definition>
+	<definition name="admin/editDivision" extends=".base.definition">
+		<put-attribute name="title" value="Division List | INMAS"
+			type="string" />
+		<put-attribute name="headWrap" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="web-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/editDivision.jsp" />
+	</definition>
+	<definition name="admin/editCommissionerate" extends=".base.definition">
+		<put-attribute name="title" value="Edit Commissionerate | INMAS"
+			type="string" />
+		<put-attribute name="headWrap" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="web-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/editCommissionerate.jsp" />
+	</definition>
+	
+	<definition name="admin/editZone" extends=".base.definition">
+		<put-attribute name="title" value="Edit Zone | INMAS"
+			type="string" />
+		<put-attribute name="headWrap" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="mobile-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="web-nav" value="/WEB-INF/templates/jsp/blank.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/editZone.jsp" />
+	</definition>
+	<!-- End new Zone -->
+	<definition name="forgotpassword" extends=".base.definition.nonsecure">
+		<put-attribute name="title" value="Forgot Password | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/forgot-password.jsp" />
+	</definition>
+	<definition name="resetPasswordFailed" extends=".base.definition.nonsecure">
+		<put-attribute name="title" value="Reset Failed | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/forgot-password.jsp" />
+	</definition>
+
+	<definition name="403" extends=".base.definition.nonsecure">
+		<put-attribute name="title" value="Unauthorized | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/403.jsp" />
+	</definition>
+	<definition name="resetPasswordVerified" extends=".base.definition.nonsecure">
+		<put-attribute name="title" value="Reset Password | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/finalPasswordChange.jsp" />
+	</definition>
+	<definition name="resetPasswordComplete" extends=".base.definition.nonsecure">
+		<put-attribute name="title" value="Password Reset Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/successNonSecure.jsp" />
+	</definition>
+	<definition name="admin/resetPasswordComplete" extends=".base.definition">
+		<put-attribute name="title" value="Password Reset Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	<definition name="division/resetPasswordComplete" extends=".base.definition.division">
+		<put-attribute name="title" value="Password Reset Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	<definition name="cc/resetPasswordComplete" extends=".base.definition.cc">
+		<put-attribute name="title" value="Password Reset Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	<definition name="zone/resetPasswordComplete" extends=".base.definition.dept">
+		<put-attribute name="title" value="Password Reset Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+
+	<definition name="registrationWelcome" extends=".base.definition">
+		<put-attribute name="title" value="Registration Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	
+	<definition name="resetSuccess" extends=".base.definition.nonsecure">
+		<put-attribute name="title" value="Reset Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/successNonSecure.jsp" />
+	</definition>
+	
+<!-- Scientist -->
+	<definition name="scientist/welcomeScientistPage" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Welcome | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/scientistWelcome.jsp" />
+	</definition>
+	
+	<definition name="scientist/userManagementPage" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Update Profile | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/userManagement.jsp" />
+	</definition>
+	
+	<definition name="scientist/resetPassword" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Reset Password | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/resetScientistPassword.jsp" />
+	</definition>
+	
+	<definition name="scientist/createDiary" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/createDiary.jsp" />
+	</definition>
+	
+	<definition name="scientist/addUserDetailsPage" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/addDiaryUsers.jsp" />
+	</definition>
+	
+	<definition name="scientist/fileCreatedPage" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/fileCreated.jsp" />
+	</definition>
+	
+	<definition name="scientist/submitFilePage" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/submitFile.jsp" />
+	</definition>
+	
+	<definition name="scientist/diaryListPage" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Diary List | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/diaryList.jsp" />
+	</definition>
+	
+	<definition name="scientist/diaryDetails" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Diary Details | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/diaryDetails.jsp" />
+	</definition>
+	
+	<definition name="scientist/closeDiaryDetailsPage" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Diary Details | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/scientist/closeDiary.jsp" />
+	</definition>
+	
+	<definition name="scientist/resetPasswordComplete" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Password Reset Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	
+	<definition name="scientist/registrationUpdateSuccess" extends=".base.definition.scientist">
+		<put-attribute name="title" value="Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	
+	<!-- Group -->
+	<definition name="group/welcomeScientistPage" extends=".base.definition.group">
+		<put-attribute name="title" value="Welcome | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/group/groupWelcome.jsp" />
+	</definition>
+	
+	<definition name="group/userManagementPage" extends=".base.definition.group">
+		<put-attribute name="title" value="Update Profile | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/group/userManagement.jsp" />
+	</definition>
+	
+	<definition name="group/resetPassword" extends=".base.definition.group">
+		<put-attribute name="title" value="Reset Password | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/group/resetGroupPassword.jsp" />
+	</definition>
+	
+	<definition name="group/createDiary" extends=".base.definition.group">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/group/createDiary.jsp" />
+	</definition>
+	
+	<definition name="group/addUserDetailsPage" extends=".base.definition.group">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/group/addDiaryUsers.jsp" />
+	</definition>
+	
+	<definition name="group/fileCreatedPage" extends=".base.definition.group">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/group/fileCreated.jsp" />
+	</definition>
+	
+	<definition name="group/submitFilePage" extends=".base.definition.group">
+		<put-attribute name="title" value="Create Diary | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/group/submitFile.jsp" />
+	</definition>
+	
+	<definition name="group/resetPasswordComplete" extends=".base.definition.group">
+		<put-attribute name="title" value="Password Reset Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	
+	<definition name="group/registrationUpdateSuccess" extends=".base.definition.group">
+		<put-attribute name="title" value="Success | INMAS"
+			type="string" />
+		<put-attribute name="content"
+			value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	
+	<definition name="group/diaryListPage" extends=".base.definition.group">
+		<put-attribute name="title" value="Diary List | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/group/diaryList.jsp" />
+	</definition>
+	
+	<definition name="group/diaryDetails" extends=".base.definition.group">
+		<put-attribute name="title" value="Diary Details | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/group/diaryDetails.jsp" />
+	</definition>
+	
+	<!-- Department -->
+	<definition name="deptHead/diaryListPage" extends=".base.definition.dept">
+		<put-attribute name="title" value="Diary List | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/diaryList.jsp" />
+	</definition>
+	
+	<definition name="deptHead/diaryDetails" extends=".base.definition.dept">
+		<put-attribute name="title" value="Diary Details | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/zonal/diaryDetails.jsp" />
+	</definition>
+	
+	<!-- Admin -->
+	<definition name="admin/diaryListPage" extends=".base.definition">
+		<put-attribute name="title" value="Diary List | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/diaryList.jsp" />
+	</definition>
+	
+	<definition name="admin/diaryDetails" extends=".base.definition">
+		<put-attribute name="title" value="Diary Details | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/diaryDetails.jsp" />
+	</definition>
+	
+	<definition name="admin/approvedDiaryListPage" extends=".base.definition">
+		<put-attribute name="title" value="Diary List | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/approvedDiaryList.jsp" />
+	</definition>
+	
+	<definition name="admin/approvedDiaryDetails" extends=".base.definition">
+		<put-attribute name="title" value="Diary Details | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/approvedDiaryDetails.jsp" />
+	</definition>
+	
+	<definition name="admin/closedDiaryListPage" extends=".base.definition">
+		<put-attribute name="title" value="Diary Details | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/auth/closedDiaryList.jsp" />
+	</definition>
+	
+	<!-- Division Head -->
+		<!-- Group -->
+	<definition name="division/welcomeDivisionPage" extends=".base.definition.division">
+		<put-attribute name="title" value="Welcome | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/division/divisionWelcome.jsp" />
+	</definition>
+	
+	<definition name="division/userManagementPage" extends=".base.definition.division">
+		<put-attribute name="title" value="Update Profile | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/division/userManagement.jsp" />
+	</definition>
+	
+	<definition name="division/resetPassword" extends=".base.definition.division">
+		<put-attribute name="title" value="Reset Password | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/division/resetDivisonalPassword.jsp" />
+	</definition>
+	
+	<definition name="division/resetPasswordComplete" extends=".base.definition.division">
+		<put-attribute name="title" value="Password Reset Success | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	
+	<definition name="division/registrationUpdateSuccess" extends=".base.definition.division">
+		<put-attribute name="title" value="Success | INMAS"
+			type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/registrationWelcome.jsp" />
+	</definition>
+	
+	<definition name="division/diaryListPage" extends=".base.definition.division">
+		<put-attribute name="title" value="Diary List | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/division/diaryList.jsp" />
+	</definition>
+	
+	<definition name="division/diaryDetails" extends=".base.definition.division">
+		<put-attribute name="title" value="Diary Details | INMAS" type="string" />
+		<put-attribute name="content" value="/WEB-INF/jsp/division/diaryDetails.jsp" />
+	</definition>
+</tiles-definitions>

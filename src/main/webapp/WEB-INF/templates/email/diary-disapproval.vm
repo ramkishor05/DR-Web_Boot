@@ -1,0 +1,43 @@
+ <table>
+
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left' valign='top'>
+			Hi ${firstName} ${lastName},
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left'>
+			<p>Your diary (Diary No: ${diaryNo}) is disapproved by ${director} followed by important instructions:</p>
+			Remark : ${remark}
+		</td>
+	</tr>
+
+
+	
+	
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	
+
+	<tr>
+		
+		<td>With Regards,<br/>
+		    Director (INMAS)</td>
+	</tr>
+	
+</table>

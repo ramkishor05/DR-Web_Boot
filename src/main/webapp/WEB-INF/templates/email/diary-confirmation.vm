@@ -1,0 +1,46 @@
+ <table>
+
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left' valign='top'>
+			Hi ${firstName} ${lastName},
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	<tr>
+		<td align='left'>
+			<p>Congratulations! Your file is approved by ${director} followed by important instructions:</p>
+			#if(${approvalChk})
+				<p>Your file is approved for ${approvalChk}. Kindly follow the same.</p>
+			#end
+		</td>
+	</tr>
+
+
+	
+	
+	<tr>
+		<th align='left' valign='top'></th>
+		<td></td>
+	</tr>
+	
+
+	<tr>
+		
+		<td>With Regards,<br/>
+	
+		    Director (INMAS)</td>
+	</tr>
+	
+</table>
