@@ -1,0 +1,24 @@
+[
+	{
+		"id": "ROLE_CHIEF_ZONAL_COMMISSIONER",
+		"entity": "com.work.drdo.executive.entity.UserRole",
+		"unique": "userRoleName",
+		"properties": {
+			"userRoleId": 1000,
+			"userRoleName": "ROLE_CHIEF_ZONAL_COMMISSIONER",
+			"position": 1,
+			"comment": "chief zonal commissioner"
+		}
+	},
+	{
+		"id": "ROLE_ADMIN",
+		"entity": "com.work.drdo.executive.entity.UserRole",
+		"unique": "userRoleName",
+		"properties": {
+			"userRoleId": 1000,
+			"userRoleName": "ROLE_ADMIN",
+			"position": 2,
+			"comment": "admin"
+		}
+	}
+]

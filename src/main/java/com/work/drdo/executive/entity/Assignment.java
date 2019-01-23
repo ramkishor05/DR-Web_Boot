@@ -17,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -65,6 +66,15 @@ public class Assignment implements Serializable {
     @Size(max = 1)
     @Column(name = "column_active")
     private String columnActive;
+    
+    @OneToOne
+    @JoinColumn(name = "prevAssignment_id")
+    private Assignment prevAssignment;
+    
+    @OneToOne
+    @JoinColumn(name = "nextAssignment_id")
+    private Assignment nextAssignment;
+    
     
     public Assignment() {
     }
