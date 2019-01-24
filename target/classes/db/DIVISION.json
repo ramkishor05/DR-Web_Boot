@@ -1,0 +1,24 @@
+[
+	{
+		"id": "DIVISION_1",
+		"entity": "com.work.drdo.executive.entity.Division",
+		"unique": "divisionName",
+		"sequence": 2,
+		"properties": {
+			"divisionId": 1,
+			"divisionName": "DIVISION_1",
+			"divisionComment": "DIVISION_1"
+		}
+	},
+	{
+		"id": "DIVISION_2",
+		"entity": "com.work.drdo.executive.entity.Division",
+		"unique": "divisionName",
+		"sequence": 2,
+		"properties": {
+			"divisionId": 2,
+			"divisionName": "DIVISION_2",
+			"divisionComment": "DIVISION_2"
+		}
+	}
+]

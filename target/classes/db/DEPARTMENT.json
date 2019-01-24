@@ -1,0 +1,32 @@
+[
+	{
+		"id": "DEPARTMENT_1",
+		"entity": "com.work.drdo.executive.entity.Department",
+		"unique": "deptId",
+		"sequence": 3,
+		"properties": {
+			"deptId": 1,
+			"deptName": "DEPARTMENT_1",
+			"deptHead": "DEPARTMENT_1",
+			"deptDescription": "DEPARTMENT_1",
+			"division": {
+				"@ref": "DIVISION_1"
+			}
+		}
+	},
+	{
+		"id": "DEPARTMENT_2",
+		"entity": "com.work.drdo.executive.entity.Department",
+		"unique": "deptId",
+		"sequence": 3,
+		"properties": {
+			"deptId": 2,
+			"deptName": "DEPARTMENT_2",
+			"deptHead": "DEPARTMENT_2",
+			"deptDescription": "DEPARTMENT_2",
+			"division": {
+				"@ref": "DIVISION_2"
+			}
+		}
+	}
+]

@@ -4,6 +4,18 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="org.brijframework-jpa-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.brijframework-jpa/org.brijframework-jpa">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.brijframework-util-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.springframework-util/org.springframework-util">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.brijframework-support-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.brijframework-support/org.brijframework-support">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="org.brijframework-logger-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.springframework-logger/org.springframework-logger">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="BriovaRx-Web"/>
         <property name="java-output-path" value="/BriovaRx-Web/target/classes"/>
     </wb-module>

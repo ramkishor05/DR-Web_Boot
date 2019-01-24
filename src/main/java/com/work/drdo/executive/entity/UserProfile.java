@@ -19,7 +19,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -147,8 +146,8 @@ public class UserProfile implements Serializable {
     @Column(name = "prefix")
     private String prefix;
     
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "loginInfo_id")
-    @OneToOne
     private LoginInfo loginInfo;
 
     @JoinColumn(name = "formation_id")

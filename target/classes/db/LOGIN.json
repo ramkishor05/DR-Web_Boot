@@ -1,0 +1,46 @@
+[
+	{
+		"id": "ADMIN_LOGIN",
+		"entity": "com.work.drdo.executive.entity.LoginInfo",
+		"unique": "userName",
+		"sequence": 6,
+		"properties": {
+			"loginId": 1,
+			"userName": "admin@admin.com",
+			"password": "$2a$10$Y448/iteU5Ozu3/x3SXuU.iSwSckjnjHN.wAm0GBl9ZkbhHvPbDLK",
+			"locked": "N",
+			"active": "Y",
+			"enabled": "Y",
+			"lastLogin": "@currentDate",
+			"createdBy": "ROLE_ADMIN",
+			"createdTs": "@currentDate",
+			"updTs": "@currentDate",
+			"updBy": "admin@admin.com",
+			"role": {
+				"@ref": "ROLE_ADMIN"
+			}
+		}
+	},
+	{
+		"id": "DIVISION_LOGIN",
+		"entity": "com.work.drdo.executive.entity.LoginInfo",
+		"unique": "userName",
+		"sequence": 6,
+		"properties": {
+			"loginId": 2,
+			"userName": "division@division.com",
+			"password": "$2a$10$Y448/iteU5Ozu3/x3SXuU.iSwSckjnjHN.wAm0GBl9ZkbhHvPbDLK",
+			"locked": "N",
+			"active": "Y",
+			"enabled": "Y",
+			"lastLogin": "@currentDate",
+			"createdBy": "ROLE_DIVISION",
+			"createdTs": "@currentDate",
+			"updTs": "@currentDate",
+			"updBy": "division@division.com",
+			"role": {
+				"@ref": "ROLE_DIVISION"
+			}
+		}
+	}
+]

@@ -1,0 +1,38 @@
+[
+	{
+		"id": "ADMIN_FORMATION",
+		"entity": "com.work.drdo.executive.entity.Formation",
+		"unique": "formationId",
+		"sequence": 5,
+		"properties": {
+			"formationId": 1,
+			"division": {
+				"@ref": "DIVISION_1"
+			},
+			"department": {
+				"@ref": "DEPARTMENT_1"
+			},
+			"group": {
+				"@ref": "GROUP_1"
+			}
+		}
+	},
+	{
+		"id": "DIVISION_FORMATION",
+		"entity": "com.work.drdo.executive.entity.Formation",
+		"unique": "formationId",
+		"sequence":5,
+		"properties": {
+			"formationId": 2,
+			"division": {
+				"@ref": "DIVISION_1"
+			},
+			"department": {
+				"@ref": "DEPARTMENT_1"
+			},
+			"group": {
+				"@ref": "GROUP_1"
+			}
+		}
+	}
+]

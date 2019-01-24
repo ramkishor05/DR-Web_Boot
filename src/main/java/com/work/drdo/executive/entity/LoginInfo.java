@@ -104,8 +104,8 @@ public class LoginInfo implements Serializable {
 	@Column(name = "ENABLED")
 	private Character enabled;
 	
-	@JoinColumn(name = "PROFILE_ID")
-	@OneToOne(mappedBy="loginInfo")
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "PROFILE_ID")
 	private UserProfile profile;
 	
 	@JoinColumn(name = "ROLE_ID")
