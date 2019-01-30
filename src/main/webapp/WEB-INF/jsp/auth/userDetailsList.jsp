@@ -162,7 +162,7 @@ $(document).ready(function() {
 								</tbody>
 	                        </table>
 							</div>
-	                        <nav aria-label="Page navigation" class="pagination-nav text-center">
+	                        <div aria-label="Page navigation" class="pagination-nav text-center">
 	                            <ul class="pagination marB0">
 	                                <li class="previous">
 	                                    <a href="javascript:void(0)" aria-label="Previous">
@@ -178,7 +178,7 @@ $(document).ready(function() {
 	                                    </a>
 	                                </li>
 	                            </ul>
-	                        </nav>
+	                        </div>
 	
 	                    </div>
 	

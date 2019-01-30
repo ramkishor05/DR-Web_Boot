@@ -54,7 +54,7 @@ public class Utility {
 	public static void saveFileToLocation(String documentPath, MultipartFile multipartFile, Attachment document){
 		try{
 			String path ="";
-			path = documentPath+document.getDiaryId().getDiaryId();
+			path = documentPath+document.getDiary().getDiaryId();
 		
 			File file = new File(path);
 	        if (!file.exists()) {
@@ -72,7 +72,7 @@ public class Utility {
 	}
 	
 	public static void deleteFileFromLocation(String documentPath,Attachment attachment){
-		Integer id = attachment.getDiaryId().getDiaryId();
+		Integer id = attachment.getDiary().getDiaryId();
 		String fileName = attachment.getFileName();
 		try{
 			File file = new File(documentPath+id+"/"+fileName);

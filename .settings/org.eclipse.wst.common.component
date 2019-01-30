@@ -16,6 +16,9 @@
         <dependent-module archiveName="org.brijframework-logger-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.springframework-logger/org.springframework-logger">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="org.brijframework-base-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/org.brijframework-base/org.brijframework-base">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="BriovaRx-Web"/>
         <property name="java-output-path" value="/BriovaRx-Web/target/classes"/>
     </wb-module>

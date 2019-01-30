@@ -110,6 +110,14 @@ public class Drdogroup implements Serializable {
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
+	
+	public Collection<Formation> getFormations() {
+		return formations;
+	}
+
+	public void setFormations(Collection<Formation> formations) {
+		this.formations = formations;
+	}
 
 	@Override
     public int hashCode() {

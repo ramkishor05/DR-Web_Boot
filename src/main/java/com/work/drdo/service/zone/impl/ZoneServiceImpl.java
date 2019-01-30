@@ -29,10 +29,10 @@ public class ZoneServiceImpl implements ZoneService {
 	try {
 	    Zone zone = ZoneMapper.mapToDB(zoneVO);
 			if (null != zoneVO.zoneId) {
-				zone.setDepartmentId(departmentDAO.find(zoneVO.getDepartmentId()));
+				zone.setDepartment(departmentDAO.find(zoneVO.getDepartmentId()));
 				zoneDAO.merge(zone);
 			} else {
-				zone.setDepartmentId(departmentDAO.find(zoneVO.getDepartmentId()));
+				zone.setDepartment(departmentDAO.find(zoneVO.getDepartmentId()));
 				zoneId = zoneDAO.saveZone(zone);
 			}
 	} catch (Exception ex) {

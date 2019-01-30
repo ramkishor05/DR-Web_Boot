@@ -3,7 +3,7 @@
 		"id": "ADMIN_PROFILE",
 		"entity": "com.work.drdo.executive.entity.UserProfile",
 		"unique": "userName",
-		"sequence": 7,
+		"sequence": 6,
 		"properties": {
 			"profileId": 1,
 			"firstName": "admin",
@@ -23,9 +23,6 @@
 			"expirationDate": "@currentDate",
 			"prefix": "MR",
 			"userName": "admin@admin.com",
-			"loginInfo": {
-				"@ref": "ADMIN_LOGIN"
-			},
 			"formation": {
 				"@ref": "ADMIN_FORMATION"
 			},
@@ -38,7 +35,7 @@
 		"id": "DIVISION_PROFILE",
 		"entity": "com.work.drdo.executive.entity.UserProfile",
 		"unique": "userName",
-		"sequence": 7,
+		"sequence": 6,
 		"properties": {
 			"profileId": 2,
 			"firstName": "Division",
@@ -58,9 +55,6 @@
 			"expirationDate": "@currentDate",
 			"prefix": "MR",
 			"userName": "division@division.com",
-			"loginInfo": {
-				"@ref": "DIVISION_LOGIN"
-			},
 			"formation": {
 				"@ref": "DIVISION_FORMATION"
 			},

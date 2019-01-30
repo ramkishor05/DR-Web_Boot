@@ -24,6 +24,20 @@ $(document).ready(function(){
             }         
 		})
     }
+    $.ajax({
+	     type  :   'GET',
+	     url   :   '${path}/diary/totaldiaryList', 
+	     success  :  function(totaldiaryList){
+	    	 if(totaldiaryList!=''){
+	    		 $("#pendingDairy").html('<span class="badge">'+totaldiaryList+'</span>');
+	    	 }else{
+	    		 $("#pendingDairy").html("");
+	    	 }
+	     },
+	     error: function(error){
+	     	console.log(error);
+	     }
+	}); 
 });
 </script>
  <div class="left-nav">
@@ -31,7 +45,7 @@ $(document).ready(function(){
          <li><a href="${path}/division/welcomeDivision">Home</a></li>
          <li><a href="${path}/division/resetPassword.html">Reset Password</a></li>
          <li><a href="${path}/division/userManagement">Profile</a></li>
-         <li><a href="${path}/division/diary/getdiaryList">Diary Management</a></li>
+         <li><a href="${path}/division/diary/getdiaryList">Diary Management<span id="pendingDairy"></span></a></li>
          <li><a href="javascript:formSubmit()">Logout</a></li>
       </ul>
 </div>

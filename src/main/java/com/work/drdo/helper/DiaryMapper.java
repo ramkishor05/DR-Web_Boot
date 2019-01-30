@@ -15,7 +15,7 @@ public class DiaryMapper {
 		diaryVO.setDairyNumber(diary.getDiaryNo());
 		diaryVO.setDiaryId(diary.getDiaryId().toString());
 		diaryVO.setDiaryType(diary.getDiaryType());
-		diaryVO.setFileId(null!=diary.getFileNumber() ? diary.getFileNumber().getUserFileId().toString() : "");
+		diaryVO.setFileId(null!=diary.getFile() ? diary.getFile().getUserFileId().toString() : "");
 		diaryVO.setSenderName(diary.getCreatedBy().getFirstName()+" "+diary.getCreatedBy().getLastName());
 		diaryVO.setClosureComment(diary.getClouserComment());
 		diaryVO.setDiaryStatus(diary.getDiaryStatus());
@@ -34,7 +34,7 @@ public class DiaryMapper {
 		diary.setDiaryType(diaryVO.getDiaryType());
 		diary.setStatus(Constants.OPEN_DIARY);
 		diary.setTimestamp(calendar.getTime());
-		diary.setSenderId(SecurityUtils.getUserProfile());
+		diary.setSender(SecurityUtils.getUserProfile());
 		diary.setCreatedBy(SecurityUtils.getUserProfile());
 		diary.setClouserComment(null!=diaryVO.getClosureComment() ? diaryVO.getClosureComment() : "");
 		return diary;

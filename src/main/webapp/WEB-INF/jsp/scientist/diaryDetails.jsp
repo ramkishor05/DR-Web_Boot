@@ -110,8 +110,6 @@
 		commonReady(path);
 		var diaryStatus = '${diary.getDiaryStatus()}';
 		var approvalStatus='${diary.getApproverStatus()}';
-		//diaryStatus='ROLE_ADMIN';
-		//approvalStatus='Y';
         if(diaryStatus==='ROLE_SCIENTIST'){
         	$("#groupLi").addClass("progtrckr-process");
         	$("#deptLi").addClass("progtrckr-todo");
@@ -160,11 +158,12 @@
         	$("#divisionLi").addClass("progtrckr-done");
         	if(approvalStatus==='N'){
         		$("#adminLi").addClass("progtrckr-reject");
-        	}else if(approvalStatus==='Y'){
+        		$("#approvedLi").addClass("progtrckr-todo");
+        	}else if(approvalStatus==='Y' || approvalStatus==='C'){
         		$("#adminLi").addClass("progtrckr-done");
         		$("#approvedLi").addClass("progtrckr-done");
         	}else{
-        		$("#adminLi").addClass("progtrckr-todo");
+        		$("#adminLi").addClass("progtrckr-process");
         		$("#approvedLi").addClass("progtrckr-todo");
         	}
         }

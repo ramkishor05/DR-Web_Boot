@@ -25,6 +25,51 @@
 			"deptHead": "DEPARTMENT_2",
 			"deptDescription": "DEPARTMENT_2",
 			"division": {
+				"@ref": "DIVISION_1"
+			}
+		}
+	},
+	{
+		"id": "DEPARTMENT_3",
+		"entity": "com.work.drdo.executive.entity.Department",
+		"unique": "deptId",
+		"sequence": 3,
+		"properties": {
+			"deptId": 3,
+			"deptName": "DEPARTMENT_3",
+			"deptHead": "DEPARTMENT_3",
+			"deptDescription": "DEPARTMENT_3",
+			"division": {
+				"@ref": "DIVISION_2"
+			}
+		}
+	},
+	{
+		"id": "DEPARTMENT_4",
+		"entity": "com.work.drdo.executive.entity.Department",
+		"unique": "deptId",
+		"sequence": 3,
+		"properties": {
+			"deptId": 4,
+			"deptName": "DEPARTMENT_4",
+			"deptHead": "DEPARTMENT_4",
+			"deptDescription": "DEPARTMENT_4",
+			"division": {
+				"@ref": "DIVISION_2"
+			}
+		}
+	},
+	{
+		"id": "DEPARTMENT_5",
+		"entity": "com.work.drdo.executive.entity.Department",
+		"unique": "deptId",
+		"sequence": 3,
+		"properties": {
+			"deptId": 5,
+			"deptName": "DEPARTMENT_5",
+			"deptHead": "DEPARTMENT_5",
+			"deptDescription": "DEPARTMENT_5",
+			"division": {
 				"@ref": "DIVISION_2"
 			}
 		}

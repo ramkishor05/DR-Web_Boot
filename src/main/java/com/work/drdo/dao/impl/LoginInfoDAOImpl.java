@@ -122,10 +122,10 @@ public class LoginInfoDAOImpl extends AbstractDao<Integer, LoginInfo> implements
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public LoginInfo getUserByProfileId(UserProfile profileId) {
-		if (null != profileId) {
+	public LoginInfo getUserByProfileId(UserProfile profile) {
+		if (null != profile) {
 			Criteria criteria = createEntityCriteria();
-			criteria.add(Restrictions.eq("profileId", profileId));
+			criteria.add(Restrictions.eq("profile", profile));
 			List<LoginInfo> user = (List<LoginInfo>) criteria.list();
 			return user.get(0);
 		}

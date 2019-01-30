@@ -52,37 +52,47 @@ public class BasicDetail implements Serializable {
     @Basic(optional = false)
     @Column(name = "basic_detail_id")
     private Integer basicDetailId;
+    
     @Size(max = 45)
     @Column(name = "designation")
     private String designation;
+    
     @Column(name = "joining_date")
     @Temporal(TemporalType.DATE)
     private Date joiningDate;
+    
     @Column(name = "till_date")
     @Temporal(TemporalType.DATE)
     private Date tillDate;
+    
     @Size(max = 145)
     @Column(name = "research_area")
     private String researchArea;
+    
     @Size(max = 145)
     @Column(name = "interested_research_area")
     private String interestedResearchArea;
+    
     @Size(max = 45)
     @Column(name = "qualification")
     private String qualification;
+    
     @Size(max = 145)
     @Column(name = "research_paper")
     private String researchPaper;
+    
     @Size(max = 145)
     @Column(name = "patent")
     private String patent;
+    
     @Column(name = "tot")
     private String tot;
+    
     @Column(name = "copyright")
     private String copyright;
     
     @OneToMany(mappedBy = "basicDetail", cascade = {CascadeType.ALL})
-    private Collection<UserProfile> userProfileCollection;
+    private Collection<UserProfile> userProfiles;
 
     public BasicDetail() {
     }
@@ -181,12 +191,12 @@ public class BasicDetail implements Serializable {
 	}
 
 	@XmlTransient
-    public Collection<UserProfile> getUserProfileCollection() {
-        return userProfileCollection;
+    public Collection<UserProfile> getUserProfiles() {
+        return userProfiles;
     }
 
-    public void setUserProfileCollection(Collection<UserProfile> userProfileCollection) {
-        this.userProfileCollection = userProfileCollection;
+    public void setUserProfiles(Collection<UserProfile> userProfiles) {
+        this.userProfiles = userProfiles;
     }
 
     @Override
@@ -198,7 +208,6 @@ public class BasicDetail implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof BasicDetail)) {
             return false;
         }

@@ -1,7 +1,5 @@
 package com.work.drdo.domain.beans;
 
-import java.util.Date;
-
 public class WelcomeBasicDetailBean {
 	private Integer basicDetailId;
 	private String joiningDate;

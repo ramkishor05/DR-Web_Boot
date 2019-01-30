@@ -40,15 +40,16 @@ public class Commissionerate implements Serializable {
     @Basic(optional = false)
     @Column(name = "commissionerate_id")
     private Integer commissionerateId;
+    
     @Column(name = "commissionerate_name")
     private String commissionerateName;
+    
     @Column(name = "comment")
     private String comment;
-  /*  @OneToMany(fetch = FetchType.EAGER,mappedBy = "commissionerateId")
-    private Collection<Division> divisionCollection;*/
+
     @JoinColumn(name = "zone_id", referencedColumnName = "zone_id")
     @ManyToOne
-    private Zone zoneId;
+    private Zone zone;
 
     public Commissionerate() {
     }
@@ -81,21 +82,12 @@ public class Commissionerate implements Serializable {
         this.comment = comment;
     }
 
-  /*  @XmlTransient
-    public Collection<Division> getDivisionCollection() {
-        return divisionCollection;
+    public Zone getZone() {
+        return zone;
     }
 
-    public void setDivisionCollection(Collection<Division> divisionCollection) {
-        this.divisionCollection = divisionCollection;
-    }*/
-
-    public Zone getZoneId() {
-        return zoneId;
-    }
-
-    public void setZoneId(Zone zoneId) {
-        this.zoneId = zoneId;
+    public void setZone(Zone zone) {
+        this.zone = zone;
     }
 
     @Override

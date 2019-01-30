@@ -140,7 +140,7 @@ public class DiaryServiceImpl implements DiaryService {
 		Assignment assignment = new Assignment();
 		Date date = new Date();
 		diary.setDiaryStatus(SecurityUtils.getRole().getUserRoleName());
-		assignment.setDiaryId(diary);
+		assignment.setDiary(diary);
 		assignment.setAssignFrom(SecurityUtils.getUserProfile());
 		assignment.setTimestamp(date);
 		assignment.setColumnActive("Y");
@@ -160,7 +160,7 @@ public class DiaryServiceImpl implements DiaryService {
 		Assignment assignment = new Assignment();
 		Date date = new Date();
 		UserDiary diary = diaryDAO.getReference(Integer.parseInt(diaryId));
-		assignment.setDiaryId(diary);
+		assignment.setDiary(diary);
 		assignment.setAssignFrom(SecurityUtils.getUserProfile());
 		assignment.setTimestamp(date);
 		assignment.setColumnActive("Y");
@@ -320,7 +320,7 @@ public class DiaryServiceImpl implements DiaryService {
 			List<AssignmentVO> assignVO = new ArrayList<>();
 			if (null != assignment) {
 				for (Assignment assign : assignment) {
-					UserDiary diary = diaryDAO.getReference(assign.getDiaryId().getDiaryId());
+					UserDiary diary = diaryDAO.getReference(assign.getDiary().getDiaryId());
 					if (diary.getStatus().equalsIgnoreCase(Constants.CLOSED_DIARY)) {
 						AssignmentVO assignmentVO = AssignmentMapper.mapFromDB(assign);
 						assignVO.add(assignmentVO);

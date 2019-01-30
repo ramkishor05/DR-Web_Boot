@@ -20,9 +20,9 @@ public class ZoneMapper {
 		    zoneVOs.setZoneId(zoneList.getZoneId());
 		    zoneVOs.setZoneName(zoneList.getZoneName());
 		    zoneVOs.setComment(zoneList.getComment());
-		    if(null != zoneList.getDepartmentId()){
-		    	zoneVOs.setDepartmentId(zoneList.getDepartmentId().getDeptId());
-		    	zoneVOs.setDepartmentName(zoneList.getDepartmentId().getDeptName());
+		    if(null != zoneList.getDepartment()){
+		    	zoneVOs.setDepartmentId(zoneList.getDepartment().getDeptId());
+		    	zoneVOs.setDepartmentName(zoneList.getDepartment().getDeptName());
 		    }
     	}
 	return zoneVOs;

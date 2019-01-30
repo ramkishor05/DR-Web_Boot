@@ -42,23 +42,29 @@ public class Recipent implements Serializable {
     @Basic(optional = false)
     @Column(name = "recipent_id")
     private Integer recipentId;
+    
     @Size(max = 145)
     @Column(name = "name")
     private String name;
+    
     @Size(max = 145)
     @Column(name = "designation")
     private String designation;
+    
     @Column(name = "office_number")
     private Integer officeNumber;
+    
     @Column(name = "ext")
     private Integer ext;
-    /*@JoinColumn(name = "address_id", referencedColumnName = "address_id")
-    @ManyToOne*/
+
+
     @Column(name = "address_id")
     private String addressId;
+    
     @JoinColumn(name = "recipent_for", referencedColumnName = "diary_id")
     @ManyToOne
     private UserDiary recipentFor;
+    
     @Size(max = 80)
     @Column(name = "email")
     private String email;

@@ -57,10 +57,8 @@ public class Address implements Serializable {
     private Integer addressPin;
     
     @OneToMany(mappedBy = "address")
-    private Collection<UserProfile> userProfileCollection;
-    /*@OneToMany(mappedBy = "addressId")
-    private Collection<Recipent> recipentCollection;*/
-
+    private Collection<UserProfile> userProfiles;
+    
     public Address() {
     }
 
@@ -109,22 +107,13 @@ public class Address implements Serializable {
     }
 
     @XmlTransient
-    public Collection<UserProfile> getUserProfileCollection() {
-        return userProfileCollection;
+    public Collection<UserProfile> getUserProfiles() {
+        return userProfiles;
     }
 
-    public void setUserProfileCollection(Collection<UserProfile> userProfileCollection) {
-        this.userProfileCollection = userProfileCollection;
+    public void setUserProfiles(Collection<UserProfile> userProfiles) {
+        this.userProfiles = userProfiles;
     }
-/*
-    @XmlTransient
-    public Collection<Recipent> getRecipentCollection() {
-        return recipentCollection;
-    }
-
-    public void setRecipentCollection(Collection<Recipent> recipentCollection) {
-        this.recipentCollection = recipentCollection;
-    }*/
 
     @Override
     public int hashCode() {
@@ -135,7 +124,6 @@ public class Address implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Address)) {
             return false;
         }

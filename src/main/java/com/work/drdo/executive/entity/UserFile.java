@@ -51,10 +51,12 @@ public class UserFile implements Serializable {
     @Size(max = 145)
     @Column(name = "file_name")
     private String fileName;
-    @OneToMany(mappedBy = "fileNumber")
-    private Collection<UserDiary> userDiaryCollection;
-    @OneToMany(mappedBy = "fileId")
-    private Collection<Attachment> attachmentCollection;
+    
+    @OneToMany(mappedBy = "file")
+    private Collection<UserDiary> userDiarys;
+    
+    @OneToMany(mappedBy = "file")
+    private Collection<Attachment> attachments;
 
     public UserFile() {
     }
@@ -96,12 +98,12 @@ public class UserFile implements Serializable {
     }
 
     @XmlTransient
-    public Collection<UserDiary> getUserDiaryCollection() {
-        return userDiaryCollection;
+    public Collection<UserDiary> getUserDiarys() {
+        return userDiarys;
     }
 
-    public void setUserDiaryCollection(Collection<UserDiary> userDiaryCollection) {
-        this.userDiaryCollection = userDiaryCollection;
+    public void setUserDiarys(Collection<UserDiary> userDiarys) {
+        this.userDiarys = userDiarys;
     }
 
 
@@ -114,7 +116,6 @@ public class UserFile implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof UserFile)) {
             return false;
         }

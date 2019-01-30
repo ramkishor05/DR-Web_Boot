@@ -104,8 +104,8 @@ public class LoginInfo implements Serializable {
 	@Column(name = "ENABLED")
 	private Character enabled;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "PROFILE_ID")
+	@JoinColumn(name = "PROFILE_ID")
+	@OneToOne
 	private UserProfile profile;
 	
 	@JoinColumn(name = "ROLE_ID")
@@ -222,8 +222,8 @@ public class LoginInfo implements Serializable {
 		return profile;
 	}
 
-	public void setProfile(UserProfile profileId) {
-		this.profile = profileId;
+	public void setProfile(UserProfile profile) {
+		this.profile = profile;
 	}
 
 	public UserRole getRole() {

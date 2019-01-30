@@ -17,7 +17,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -35,7 +34,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Assignment.findAll", query = "SELECT a FROM Assignment a")
     , @NamedQuery(name = "Assignment.findByAssignmentId", query = "SELECT a FROM Assignment a WHERE a.assignmentId = :assignmentId")
     , @NamedQuery(name = "Assignment.findByTimestamp", query = "SELECT a FROM Assignment a WHERE a.timestamp = :timestamp")
-    , @NamedQuery(name = "Assignment.findByDiaryId", query = "SELECT a FROM Assignment a WHERE a.diaryId = :diaryId")
+    , @NamedQuery(name = "Assignment.findByDiaryId", query = "SELECT a FROM Assignment a WHERE a.diary.diaryId = :diaryId")
 	, @NamedQuery(name = "Assignment.findByAssignId", query = "SELECT a FROM Assignment a WHERE a.assignTo.profileId = :profileId AND a.columnActive = :columnActive")})
 public class Assignment implements Serializable {
 
@@ -45,36 +44,34 @@ public class Assignment implements Serializable {
     @Basic(optional = false)
     @Column(name = "assignment_id")
     private Integer assignmentId;
+    
     @Column(name = "timestamp")
     @Temporal(TemporalType.DATE)
     private Date timestamp;
+    
     @JoinColumn(name = "diary_id", referencedColumnName = "diary_id")
     @ManyToOne
-    private UserDiary diaryId;
-    @JoinColumn(name = "assign_to", referencedColumnName = "profileId")
+    private UserDiary diary;
+    
+    @JoinColumn(name = "assign_to", referencedColumnName = "profile_id")
     @ManyToOne
     private UserProfile assignTo;
-    @JoinColumn(name = "assign_from", referencedColumnName = "profileId")
+    
+    @JoinColumn(name = "assign_from", referencedColumnName = "profile_id")
     @ManyToOne
     private UserProfile assignFrom;
+    
     @Size(max = 1)
     @Column(name = "approval_status")
     private String approvalStatus;
+    
     @Size(max = 200)
     @Column(name = "approver_comment")
     private String approverComment;
+    
     @Size(max = 1)
     @Column(name = "column_active")
     private String columnActive;
-    
-    @OneToOne
-    @JoinColumn(name = "prevAssignment_id")
-    private Assignment prevAssignment;
-    
-    @OneToOne
-    @JoinColumn(name = "nextAssignment_id")
-    private Assignment nextAssignment;
-    
     
     public Assignment() {
     }
@@ -99,12 +96,12 @@ public class Assignment implements Serializable {
         this.timestamp = timestamp;
     }
 
-    public UserDiary getDiaryId() {
-		return diaryId;
+    public UserDiary getDiary() {
+		return diary;
 	}
 
-	public void setDiaryId(UserDiary diaryId) {
-		this.diaryId = diaryId;
+	public void setDiary(UserDiary diary) {
+		this.diary = diary;
 	}
 
 	public UserProfile getAssignTo() {
@@ -156,7 +153,6 @@ public class Assignment implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Assignment)) {
             return false;
         }

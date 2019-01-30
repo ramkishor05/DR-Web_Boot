@@ -24,6 +24,21 @@ $(document).ready(function(){
             }         
 		})
     }
+    $.ajax({
+	     type  :   'GET',
+	     url   :   '${path}/diary/totaldiaryList', 
+	     success  :  function(totaldiaryList){
+	    	 if(totaldiaryList!=''){
+	    		 $("#pendingDairy").html('<span class="badge">'+totaldiaryList+'</span>');
+	    	 }else{
+	    		 $("#pendingDairy").html("");
+	    	 }
+	     },
+	     error: function(error){
+	     	console.log(error);
+	     }
+	}); 
+    
 });
 </script>
 <div class="left-nav">
@@ -58,7 +73,7 @@ $(document).ready(function(){
 			</ul>
 		</li>
 		
-		<li class="has-child"><a href="javascript:void(0);">Diary Management</a>
+		<li class="has-child"><a href="javascript:void(0);">Diary Management<span id="pendingDairy"></span></a>
 			<ul>
 				<li><a href="${path}/admin/diary/getdiaryList">Diary List</a></li>
 				<li><a href="${path}/admin/diary/getApprovedDiary">Approved Diary</a></li>

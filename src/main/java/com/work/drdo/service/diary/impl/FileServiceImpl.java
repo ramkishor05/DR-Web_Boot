@@ -32,7 +32,7 @@ public class FileServiceImpl implements FileService {
 			} else {
 				fileId= fileDAO.saveFile(file);
 				UserDiary diary = diaryDAO.getReference(Integer.parseInt(userFileVO.getDiaryId()));
-				diary.setFileNumber(file);
+				diary.setFile(file);
 				diaryDAO.merge(diary);
 			}
 		} catch (Exception ex) {

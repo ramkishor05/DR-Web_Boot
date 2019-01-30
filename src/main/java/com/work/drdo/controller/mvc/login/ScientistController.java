@@ -254,7 +254,7 @@ public class ScientistController {
 	@RequestMapping(value = "/scientist/updateBasicDetails", method = RequestMethod.POST)
 	public String updateBasicDetails(@ModelAttribute("welcomeProfileBean") WelcomeProfileBean profileBean, ModelMap model,
 			HttpServletRequest request, HttpServletResponse response) {
-		logger.info("Inside scientist updateBasicDetails "+PrintUtil.getObjectInfo(profileBean));
+		logger.info("Inside scientist updateBasicDetails ");
 		try {
 			registrationService.updateProfile(profileBean);
 		} catch (Exception ex) {

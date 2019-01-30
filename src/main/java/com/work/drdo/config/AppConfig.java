@@ -33,29 +33,24 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import com.work.drdo.framework.listeners.LogoutListener;
 
-
-
-
 @Configuration
 @EnableAsync
 @EnableScheduling
-@PropertySources(value = { 
-	@PropertySource("file:${DRDO_PATH}/drdo_config/ApplicationResource.properties"), 
-	@PropertySource("file:${DRDO_PATH}/drdo_config/appConfig.properties"),
-    @PropertySource("file:${DRDO_PATH}/drdo_config/config.properties")  
-})
-@ImportResource( { "/applicationContext.xml" } )
+@PropertySources(value = { @PropertySource("file:${DRDO_PATH}/drdo_config/ApplicationResource.properties"),
+		@PropertySource("file:${DRDO_PATH}/drdo_config/appConfig.properties"),
+		@PropertySource("file:${DRDO_PATH}/drdo_config/config.properties") })
+@ImportResource({ "/applicationContext.xml" })
 public class AppConfig {
 
 	@Autowired
 	Environment env;
-	
+
 	@SuppressWarnings("unused")
 	private String configDir;
-	
+
 	@Value("${log4j.config.location}")
 	private String log4jConfigPath;
-	
+
 	@Value("${log4j.refresh.interval}")
 	private String log4jRefreshInterval;
 	@Value("${mail.retry.count}")
@@ -63,77 +58,80 @@ public class AppConfig {
 
 	@Value("${mail.retry.waitBeforeRetry}")
 	private long waitBeforeRetry;
-	
+
 	@PostConstruct
-	void init(){
+	void init() {
 		configDir = env.getProperty("Abhinav_APP_ROOT") + "/config/";
 	}
-	
+
 	@Bean
-	public MethodInvokingFactoryBean log4jConfig(){
+	public MethodInvokingFactoryBean log4jConfig() {
 		MethodInvokingFactoryBean log4jConfig = new MethodInvokingFactoryBean();
 		log4jConfig.setTargetClass(Log4jConfigurer.class);
 		log4jConfig.setTargetMethod("initLogging");
-		log4jConfig.setArguments(new Object[] { log4jConfigPath, log4jRefreshInterval } );
-		
+		log4jConfig.setArguments(new Object[] { log4jConfigPath, log4jRefreshInterval });
+
 		return log4jConfig;
 	}
-	
-	@Bean(name="mailRetryHandler")
-    public RetryTemplate mailRetryHandler(){
-    	RetryTemplate retryHanlder = new RetryTemplate();
+
+	@Bean(name = "mailRetryHandler")
+	public RetryTemplate mailRetryHandler() {
+		RetryTemplate retryHanlder = new RetryTemplate();
 		Map<Class<? extends Throwable>, Boolean> exceptionsToRetry = new HashMap<Class<? extends Throwable>, Boolean>();
 		exceptionsToRetry.put(Exception.class, Boolean.TRUE);
-		
+
 		RetryPolicy retryPolicy = new SimpleRetryPolicy(retryCount, exceptionsToRetry);
 		retryHanlder.setRetryPolicy(retryPolicy);
-		
+
 		ExponentialBackOffPolicy backOffPolicy = new ExponentialBackOffPolicy();
 		backOffPolicy.setInitialInterval(waitBeforeRetry);
 		retryHanlder.setBackOffPolicy(backOffPolicy);
-		
+
 		return retryHanlder;
-    }
+	}
+
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
 		PropertySourcesPlaceholderConfigurer propertyConfigurer = new PropertySourcesPlaceholderConfigurer();
 		return propertyConfigurer;
 	}
 
-	@Bean(name="asyncExecutor")
-	public Executor threadPoolTaskExecutor(){
+	@Bean(name = "asyncExecutor")
+	public Executor threadPoolTaskExecutor() {
 		ThreadPoolTaskExecutor asyncExecutor = new ThreadPoolTaskExecutor();
 		asyncExecutor.setCorePoolSize(Integer.parseInt(env.getProperty("async.executor.pool.size.core")));
 		asyncExecutor.setMaxPoolSize(Integer.parseInt(env.getProperty("async.executor.pool.size.max")));
 		asyncExecutor.setQueueCapacity(Integer.parseInt(env.getProperty("async.executor.queue.capacity")));
 		return asyncExecutor;
 	}
-	
+
 	@Bean
-    public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasenames("/i18n/usermsg", "/i18n/user-err", "/i18n/validation-msg");
-        messageSource.setDefaultEncoding("UTF-8");
-        messageSource.setUseCodeAsDefaultMessage(false);
-        return messageSource;
-    }
-	
-	@Bean
-	public LocaleResolver localeResolver(){
-	SessionLocaleResolver  resolver = new SessionLocaleResolver();
-	   resolver.setDefaultLocale(new Locale("en"));
-	   return resolver;
+	public MessageSource messageSource() {
+		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+		messageSource.setBasenames("/i18n/usermsg", "/i18n/user-err", "/i18n/validation-msg");
+		messageSource.setDefaultEncoding("UTF-8");
+		messageSource.setUseCodeAsDefaultMessage(false);
+		return messageSource;
 	}
+
+	@Bean
+	public LocaleResolver localeResolver() {
+		SessionLocaleResolver resolver = new SessionLocaleResolver();
+		resolver.setDefaultLocale(new Locale("en"));
+		return resolver;
+	}
+
 	@Bean(name = "filterMultipartResolver")
-    public CommonsMultipartResolver commonsMultipartResolver(){
-        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
-        commonsMultipartResolver.setDefaultEncoding("utf-8");
-        commonsMultipartResolver.setMaxUploadSize(50000000);
-        return commonsMultipartResolver;
-    }
+	public CommonsMultipartResolver commonsMultipartResolver() {
+		CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+		commonsMultipartResolver.setDefaultEncoding("utf-8");
+		commonsMultipartResolver.setMaxUploadSize(50000000);
+		return commonsMultipartResolver;
+	}
+
 	@Bean(name = "logoutListener")
-	public LogoutListener getLogoutListener(){
+	public LogoutListener getLogoutListener() {
 		return new LogoutListener();
 	}
-	
+
 }

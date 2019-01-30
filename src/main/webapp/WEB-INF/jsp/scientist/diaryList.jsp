@@ -39,27 +39,60 @@
 				                                    <td>${counter.index+1 + param["page"]*10}</td>
 				                                    <td>${assignList.getDairyNumber()}</td>
 				                                    <td>${assignList.getDiaryType()}</td>
-				                                     <td>
-					                                     <c:choose>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_SCIENTIST' and assignList.getApproverStatus() eq ''}">Disapproved</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_GROUPHEAD' and assignList.getApproverStatus() eq ''}">Pending with Group Head</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_GROUPHEAD' and assignList.getApproverStatus() eq 'Y'}">Approved Group Head</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_GROUPHEAD' and assignList.getApproverStatus() eq 'N'}">Disapproved Group Head</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_DEPTHEAD' and assignList.getApproverStatus() eq ''} " >Pending with Department Head</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_DEPTHEAD' and assignList.getApproverStatus() eq 'Y'} " >Approved by  Department Head</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_DEPTHEAD' and assignList.getApproverStatus() eq 'N'} " >Disapproved by Department Head</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_DIVISION_OFFICIER' and assignList.getApproverStatus() eq ''}">Pending with Division Head</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_DIVISION_OFFICIER' and assignList.getApproverStatus() eq 'Y'}">Approved by Division Head</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_DIVISION_OFFICIER' and assignList.getApproverStatus() eq 'N'}">Disapproved by Division Head</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_ADMIN' and assignList.getApproverStatus() eq ''}">Pending with Admin</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_ADMIN' and assignList.getApproverStatus() eq 'Y'}">Approved by Admin</c:when>
-						                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_ADMIN' and assignList.getApproverStatus() eq 'N'}">Disapproved by Admin</c:when>
-					                                     </c:choose>
+				                                    <td>
+					                                 <c:choose>
+					                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_GROUPHEAD'}">
+															 <c:if test="${assignList.getApproverStatus() eq 'P'}">
+					                                             Pending with Group Head
+					                                         </c:if>
+					                                          <c:if test="${assignList.getApproverStatus() eq 'Y'}">
+					                                             Approved by Group Head
+					                                         </c:if>
+					                                          <c:if test="${assignList.getApproverStatus() eq 'N'}">
+					                                             Disapproved by Group Head
+					                                         </c:if>
+														</c:when>
+					                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_DEPTHEAD'}" >
+					                                         <c:if test="${assignList.getApproverStatus() eq 'P'}">
+					                                             Pending with Department Head
+					                                         </c:if>
+					                                          <c:if test="${assignList.getApproverStatus() eq 'Y'}">
+					                                             Approved by Department Head
+					                                         </c:if>
+					                                          <c:if test="${assignList.getApproverStatus() eq 'N'}">
+					                                             Disapproved by Department Head
+					                                         </c:if>
+					                                     </c:when>
+					                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_DIVISION_OFFICIER'}" >
+					                                         <c:if test="${assignList.getApproverStatus() eq 'P'}">
+					                                             Pending with Division Head
+					                                         </c:if>
+					                                          <c:if test="${assignList.getApproverStatus() eq 'Y'}">
+					                                             Approved by Division Head
+					                                         </c:if>
+					                                          <c:if test="${assignList.getApproverStatus() eq 'N'}">
+					                                             Disapproved by Division Head
+					                                         </c:if>
+					                                     </c:when>
+					                                     <c:when test="${assignList.getDiaryStatus() eq 'ROLE_ADMIN'}">
+															  <c:if test="${assignList.getApproverStatus() eq 'P'}">
+					                                             Pending with Admin
+					                                         </c:if>
+					                                          <c:if test="${assignList.getApproverStatus() eq 'Y'}">
+					                                             Approved by Admin
+					                                         </c:if>
+					                                          <c:if test="${assignList.getApproverStatus() eq 'N'}">
+					                                             Disapproved by Admin
+					                                         </c:if>
+					                                         <c:if test="${assignList.getApproverStatus() eq 'C'}">
+					                                             Closed dairy 
+					                                         </c:if>
+														</c:when>
+				                                     </c:choose>
 				                                     </td>
 				                                    <td style="text-align:center">
 				                                    	<a class="icon edit" href="${path}/scientist/diary/viewDiaryDetails/${assignList.getDiaryId()}">View Details</a>
-				                                    	
-				                                    	 <c:if test="${assignList.getDiaryStatus() eq ''}">| <a class="icon edit" href="${path}/scientist/diary/closeDiaryPage/${assignList.getDiaryId()}">Close Diary</a></c:if>
+				                                    	 <c:if test="${assignList.getDiaryStatus() eq 'ROLE_ADMIN' and assignList.getApproverStatus() eq 'Y'}">| <a class="icon edit" href="${path}/scientist/diary/closeDiaryPage/${assignList.getDiaryId()}">Close Diary</a></c:if>
 				                                    </td>
 				                                </tr>
 			                            	</c:forEach>

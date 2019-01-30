@@ -11,15 +11,15 @@ public class AssignmentMapper {
 		assignmentVO.setAssignedFrom(assign.getAssignFrom().getProfileId().toString());
 		assignmentVO.setAssignTo(null!=assign.getAssignTo() ? assign.getAssignTo().getProfileId().toString() :"");
 		assignmentVO.setAssignmentId(assign.getAssignmentId().toString());
-		assignmentVO.setDiaryId(assign.getDiaryId().getDiaryId().toString());
-		assignmentVO.setDiaryNo(assign.getDiaryId().getDiaryNo());
-		assignmentVO.setFileNumber(assign.getDiaryId().getFileNumber().getFileNumber());
-		assignmentVO.setFileSubject(assign.getDiaryId().getFileNumber().getFileName());
-		assignmentVO.setSenderName(assign.getDiaryId().getCreatedBy().getFirstName()+" "+assign.getDiaryId().getCreatedBy().getLastName());
+		assignmentVO.setDiaryId(assign.getDiary().getDiaryId().toString());
+		assignmentVO.setDiaryNo(assign.getDiary().getDiaryNo());
+		assignmentVO.setFileNumber(assign.getDiary().getFile().getFileNumber());
+		assignmentVO.setFileSubject(assign.getDiary().getFile().getFileName());
+		assignmentVO.setSenderName(assign.getDiary().getCreatedBy().getFirstName()+" "+assign.getDiary().getCreatedBy().getLastName());
 		assignmentVO.setApproverComment(assign.getApproverComment());
 		assignmentVO.setApproverStatus(assign.getApprovalStatus());
-		assignmentVO.setDiaryType(assign.getDiaryId().getDiaryType());
-		assignmentVO.setClosureComment(assign.getDiaryId().getClouserComment());
+		assignmentVO.setDiaryType(assign.getDiary().getDiaryType());
+		assignmentVO.setClosureComment(assign.getDiary().getClouserComment());
 		return assignmentVO;
 	}
 

@@ -3,7 +3,7 @@
 		"id": "ADMIN_LOGIN",
 		"entity": "com.work.drdo.executive.entity.LoginInfo",
 		"unique": "userName",
-		"sequence": 6,
+		"sequence": 7,
 		"properties": {
 			"loginId": 1,
 			"userName": "admin@admin.com",
@@ -18,6 +18,9 @@
 			"updBy": "admin@admin.com",
 			"role": {
 				"@ref": "ROLE_ADMIN"
+			},
+			"profile": {
+				"@ref": "ADMIN_PROFILE"
 			}
 		}
 	},
@@ -25,7 +28,7 @@
 		"id": "DIVISION_LOGIN",
 		"entity": "com.work.drdo.executive.entity.LoginInfo",
 		"unique": "userName",
-		"sequence": 6,
+		"sequence": 7,
 		"properties": {
 			"loginId": 2,
 			"userName": "division@division.com",
@@ -40,6 +43,9 @@
 			"updBy": "division@division.com",
 			"role": {
 				"@ref": "ROLE_DIVISION"
+			},
+			"profile": {
+				"@ref": "DIVISION_PROFILE"
 			}
 		}
 	}

@@ -20,9 +20,9 @@ public class FormationMapper {
 		commissionerateVO.setCommissionerateId(commissionerate.getCommissionerateId());
 		commissionerateVO.setCommissionerateName(commissionerate.getCommissionerateName());
 		commissionerateVO.setCommissionerateComment(commissionerate.getComment());
-		commissionerateVO.setZoneId(ZoneMapper.mapFromDB(commissionerate.getZoneId()).getZoneName());
-		commissionerateVO.setDeptId(null != commissionerate.getZoneId().getDepartmentId() ? 
-				String.valueOf(commissionerate.getZoneId().getDepartmentId().getDeptId()): null);
+		commissionerateVO.setZoneId(ZoneMapper.mapFromDB(commissionerate.getZone()).getZoneName());
+		commissionerateVO.setDeptId(null != commissionerate.getZone().getDepartment() ? 
+				String.valueOf(commissionerate.getZone().getDepartment().getDeptId()): null);
 		return commissionerateVO;
 	}
 	

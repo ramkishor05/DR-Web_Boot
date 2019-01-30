@@ -13,7 +13,6 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -66,38 +65,38 @@ public class UserProfile implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "profileId")
+    @Column(name = "profile_id")
     private Integer profileId;
    
     @Lob
-    @Column(name = "profilePic")
+    @Column(name = "profile_pic")
     private byte[] profilePic;
     
     @Size(max = 145)
-    @Column(name = "userName")
+    @Column(name = "user_name")
     private String userName;
    
     @Size(max = 45)
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     private String firstName;
     
     @Size(max = 45)
-    @Column(name = "middleName")
+    @Column(name = "middle_name")
     private String middleName;
    
     @Size(max = 45)
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
    
     @Size(max = 45)
     @Column(name = "gender")
     private String gender;
    
-    @Column(name = "dateOfBirth")
+    @Column(name = "date_of_birth")
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
    
-    @Column(name = "regnDate")
+    @Column(name = "regn_date")
     @Temporal(TemporalType.DATE)
     private Date regnDate;
 
@@ -108,14 +107,14 @@ public class UserProfile implements Serializable {
     private String email;
     
     @Size(max = 45)
-    @Column(name = "createdBy")
+    @Column(name = "created_by")
     private String createdBy;
     
     @Size(max = 45)
-    @Column(name = "createdByRole")
+    @Column(name = "created_by_role")
     private String createdByRole;
     
-    @Column(name = "createdTs")
+    @Column(name = "created_ts")
     @Temporal(TemporalType.DATE)
     private Date createdTs;
 
@@ -135,19 +134,19 @@ public class UserProfile implements Serializable {
     @Column(name = "position")
     private String position;
     
-    @Column(name = "replaceBy")
+    @Column(name = "replace_by")
     private String replaceBy;
     
-    @Column(name = "expirationDate")
+    @Column(name = "expiration_date")
     @Temporal(TemporalType.DATE)
-    
     private Date expirationDate;
+    
     @Size(max = 5)
     @Column(name = "prefix")
     private String prefix;
     
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "loginInfo_id")
+    @JoinColumn(name = "login_info_id")
+    @OneToOne(mappedBy="profile")
     private LoginInfo loginInfo;
 
     @JoinColumn(name = "formation_id")
@@ -170,18 +169,18 @@ public class UserProfile implements Serializable {
     @OneToOne(cascade = {CascadeType.ALL})
     private Address address;
     
-    @JoinColumn(name = "userProject_Id")
+    @JoinColumn(name = "user_project_id")
     @OneToOne(cascade = {CascadeType.ALL})
     private UserProject userProject;
     
-    @JoinColumn(name = "designation_Id")
+    @JoinColumn(name = "designation_id")
     @OneToOne(cascade = {CascadeType.ALL})
     private UserDesignation userDesignation;
     
-    @OneToMany(mappedBy = "senderId",cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "createdBy",cascade = {CascadeType.ALL})
     private Collection<UserDiary> userDiarys;
   
-    @OneToMany(mappedBy = "userProfile" ,cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "userProfile" ,cascade = CascadeType.ALL)
     private Collection<UserAward> userAwards;
 	
 

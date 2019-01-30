@@ -78,6 +78,7 @@ public class LoginController {
 	@RequestMapping(value = "/admin/welcomeAdmin", method = RequestMethod.GET)
 	public String adminSuccess(ModelMap model, HttpServletRequest request, HttpServletResponse response) {
 		logger.info("Inside admin welcome.");
+		try {
 		UserProfile profile = profileDao
 				.find(Integer.valueOf(SecurityUtils.getLoggedInUser().getUserProfile().getProfileId()));
 		LoginLog log = new LoginLog();
@@ -87,6 +88,9 @@ public class LoginController {
 		SecurityUtils.setSessionAttrib("userName", SecurityUtils.getLoggedInUser().getUserProfile().getFirstName());
 		loginService.saveLoginLog(log);
 		model.addAttribute("profile", profile);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		return "admin/welcomeAdmin";
 	}
 
@@ -194,8 +198,6 @@ public class LoginController {
 	@RequestMapping(value = "/admin/executive.html", method = RequestMethod.POST, consumes = { "multipart/form-data" })
 	public String registerUser(ModelMap model, @ModelAttribute("registerLoginBean") RegisterLoginBean registerLoginBean,
 			@RequestParam("file") MultipartFile file, RedirectAttributes redir) {
-		logger.info("Inside admin registerUser."+PrintUtil.getObjectInfo(registerLoginBean.getProfile().getFormation()));
-		System.out.println("Inside admin registerUser."+PrintUtil.getObjectInfo(registerLoginBean.getProfile().getFormation()));
 		LoggedInUser createdBy = SecurityUtils.getLoggedInUser();
 		try {
 			registrationService.registerUserFromAdmin(registerLoginBean, createdBy,file.isEmpty()? null: file.getBytes());

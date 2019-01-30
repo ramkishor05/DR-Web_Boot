@@ -57,7 +57,7 @@ public class LoginLog implements Serializable {
     @Column(name = "session_id")
     private String sessionId;
     
-    @JoinColumn(name = "loginInfo_id")
+    @JoinColumn(name = "login_info_id")
     @ManyToOne
     private LoginInfo loginInfo;
 

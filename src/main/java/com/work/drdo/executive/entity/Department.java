@@ -67,6 +67,9 @@ public class Department implements Serializable {
     @OneToMany(mappedBy = "department")
     private Collection<Drdogroup> drdogroups;
     
+    @OneToMany(mappedBy = "department")
+    private Collection<Formation> formations;
+    
     public Department() {
     }
 
@@ -110,7 +113,6 @@ public class Department implements Serializable {
     public void setDeptDescription(String deptDescription) {
         this.deptDescription = deptDescription;
     }
-
     
     public Division getDivision() {
 		return division;
@@ -121,7 +123,7 @@ public class Department implements Serializable {
 	}
 
     @XmlTransient
-    public Collection<Drdogroup> getDrdogroupCollection() {
+    public Collection<Drdogroup> getDrdogroups() {
         return drdogroups;
     }
 
@@ -129,7 +131,15 @@ public class Department implements Serializable {
         this.drdogroups = drdogroups;
     }
     
-    @Override
+    public Collection<Formation> getFormations() {
+		return formations;
+	}
+
+	public void setFormations(Collection<Formation> formations) {
+		this.formations = formations;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (deptId != null ? deptId.hashCode() : 0);
@@ -138,7 +148,6 @@ public class Department implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Department)) {
             return false;
         }

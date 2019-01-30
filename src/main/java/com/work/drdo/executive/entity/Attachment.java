@@ -35,9 +35,9 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Attachment.findByAttachmentId", query = "SELECT a FROM Attachment a WHERE a.attachmentId = :attachmentId")
     , @NamedQuery(name = "Attachment.findByFileName", query = "SELECT a FROM Attachment a WHERE a.fileName = :fileName")
     , @NamedQuery(name = "Attachment.findByDescription", query = "SELECT a FROM Attachment a WHERE a.description = :description")
-    , @NamedQuery(name = "Attachment.findByFileId", query = "SELECT a FROM Attachment a WHERE a.fileId = :fileId")
+    , @NamedQuery(name = "Attachment.findByFileId", query = "SELECT a FROM Attachment a WHERE a.file.userFileId = :fileId")
     , @NamedQuery(name = "Attachment.findByContentPath", query = "SELECT a FROM Attachment a WHERE a.contentPath = :contentPath")
-    , @NamedQuery(name = "Attachment.findByDiaryId", query = "SELECT a FROM Attachment a WHERE a.diaryId = :diaryId")})
+    , @NamedQuery(name = "Attachment.findByDiaryId", query = "SELECT a FROM Attachment a WHERE a.diary.diaryId = :diaryId")})
 public class Attachment implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -46,28 +46,33 @@ public class Attachment implements Serializable {
     @Basic(optional = false)
     @Column(name = "attachment_id")
     private Integer attachmentId;
+    
     @Size(max = 45)
     @Column(name = "file_name")
     private String fileName;
+    
     @Size(max = 100)
     @Column(name = "type")
     private String type;
+    
     @Size(max = 145)
     @Column(name = "description")
     private String description;
-    /*@Column(name = "file_id")
-    private Integer fileId;*/
+
     @Size(max = 45)
     @Column(name = "content_path")
     private String contentPath;
+    
     @JoinColumn(name = "diary_id", referencedColumnName = "diary_id")
     @ManyToOne
-    private UserDiary diaryId;
+    private UserDiary diary;
+    
     @JoinColumn(name = "file_id", referencedColumnName = "user_file_id")
     @ManyToOne
-    private UserFile fileId;
-    @OneToMany(mappedBy = "attachmentId")
-    private Collection<UserDiary> userDiaryCollection;
+    private UserFile file;
+    
+    @OneToMany(mappedBy = "attachment")
+    private Collection<UserDiary> userDiarys;
 
     public Attachment() {
     }
@@ -100,14 +105,6 @@ public class Attachment implements Serializable {
         this.description = description;
     }
 
-   /* public Integer getFileId() {
-        return fileId;
-    }
-
-    public void setFileId(Integer fileId) {
-        this.fileId = fileId;
-    }*/
-
     public String getContentPath() {
         return contentPath;
     }
@@ -116,14 +113,6 @@ public class Attachment implements Serializable {
         this.contentPath = contentPath;
     }
 
-   /* public Integer getDiaryId() {
-        return diaryId;
-    }
-
-    public void setDiaryId(Integer diaryId) {
-        this.diaryId = diaryId;
-    }*/
-    
     public String getType() {
 		return type;
 	}
@@ -132,29 +121,29 @@ public class Attachment implements Serializable {
 		this.type = type;
 	}
 
-	public UserDiary getDiaryId() {
-		return diaryId;
+	public UserDiary getDiary() {
+		return diary;
 	}
 
-	public void setDiaryId(UserDiary diaryId) {
-		this.diaryId = diaryId;
+	public void setDiary(UserDiary diary) {
+		this.diary = diary;
 	}
 
-	public UserFile getFileId() {
-		return fileId;
+	public UserFile getFile() {
+		return file;
 	}
 
-	public void setFileId(UserFile fileId) {
-		this.fileId = fileId;
+	public void setFile(UserFile file) {
+		this.file = file;
 	}
     
     @XmlTransient
-    public Collection<UserDiary> getUserDiaryCollection() {
-        return userDiaryCollection;
+    public Collection<UserDiary> getUserDiarys() {
+        return userDiarys;
     }
 
-    public void setUserDiaryCollection(Collection<UserDiary> userDiaryCollection) {
-        this.userDiaryCollection = userDiaryCollection;
+    public void setUserDiarys(Collection<UserDiary> userDiarys) {
+        this.userDiarys = userDiarys;
     }
 
     @Override
@@ -166,7 +155,6 @@ public class Attachment implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Attachment)) {
             return false;
         }

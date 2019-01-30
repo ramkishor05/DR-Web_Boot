@@ -76,9 +76,11 @@
 		 
 		$("#EMAIL_ADDRESS").on("focusout",function(){
 			if($("#EMAIL_ADDRESS").valid()){
-				$("#username").val($("#EMAIL_ADDRESS").val());
+				var username=$("#EMAIL_ADDRESS").val();
+				$("#username").val(username);
 			}
-		})
+		});
+	
 		$('#gotoReview').on('click',function(){
 			if(!$("#picFile").hasClass("imageError")){
     			if($("#updateProfileForm").valid()){

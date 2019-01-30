@@ -106,8 +106,8 @@ public class AttachmentController {
 		document.setFileName(multipartFile.getOriginalFilename());
 		document.setDescription(fileBucket.getDescription());
 		document.setType(multipartFile.getContentType());
-		document.setDiaryId(diaryService.getDiaryEntityById(Integer.parseInt(fileBucket.getDiaryId())));
-		document.setFileId(fileService.getFileEntityById(Integer.parseInt(fileBucket.getFileId())));
+		document.setDiary(diaryService.getDiaryEntityById(Integer.parseInt(fileBucket.getDiaryId())));
+		document.setFile(fileService.getFileEntityById(Integer.parseInt(fileBucket.getFileId())));
 		// document.setContent(multipartFile.getBytes());
 		// String documentPath= attachmentPath+"/question/";
 		Utility.saveFileToLocation(attachmentPath, multipartFile, document);

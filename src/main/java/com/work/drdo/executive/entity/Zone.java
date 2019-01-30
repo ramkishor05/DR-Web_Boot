@@ -6,6 +6,8 @@
 package com.work.drdo.executive.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -40,15 +43,21 @@ public class Zone implements Serializable {
     @Basic(optional = false)
     @Column(name = "zone_id")
     private Integer zoneId;
+    
     @Size(max = 145)
     @Column(name = "zone_name")
     private String zoneName;
+    
     @Size(max = 145)
     @Column(name = "comment")
     private String comment;
+    
     @JoinColumn(name = "department_id", referencedColumnName = "dept_id")
     @ManyToOne
-    private Department departmentId;
+    private Department department;
+    
+    @OneToMany(mappedBy="zone")
+    private Collection<Commissionerate> commissionerates;
 
     public Zone() {
     }
@@ -81,15 +90,23 @@ public class Zone implements Serializable {
         this.comment = comment;
     }
 
-    public Department getDepartmentId() {
-        return departmentId;
+    public Department getDepartment() {
+        return department;
     }
 
-    public void setDepartmentId(Department departmentId) {
-        this.departmentId = departmentId;
+    public void setDepartment(Department department) {
+        this.department = department;
     }
+    
+    public Collection<Commissionerate> getCommissionerates() {
+		return commissionerates;
+	}
 
-    @Override
+	public void setCommissionerates(Collection<Commissionerate> commissionerates) {
+		this.commissionerates = commissionerates;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (zoneId != null ? zoneId.hashCode() : 0);
@@ -98,7 +115,6 @@ public class Zone implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Zone)) {
             return false;
         }

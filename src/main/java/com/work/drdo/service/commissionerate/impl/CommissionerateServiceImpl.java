@@ -35,7 +35,7 @@ public class CommissionerateServiceImpl implements CommissionerateService {
 			Commissionerate commissionerate = FormationMapper.commissionerateMappingToDB(commissionerateVO);
 			if(null!=commissionerateVO.getZoneId()){
 				ZoneVO zone = findZoneDetail(commissionerateVO.getZoneId());
-				commissionerate.setZoneId(ZoneMapper.mapToDB(zone));
+				commissionerate.setZone(ZoneMapper.mapToDB(zone));
 			}
 			 commissionerateId = commissionerateDAO.save(commissionerate);
 		} catch (Exception ex) {
@@ -61,8 +61,8 @@ public class CommissionerateServiceImpl implements CommissionerateService {
 		List<CommissionerateVO> CommissionerateVOList = new ArrayList<CommissionerateVO>();
 		for (Commissionerate commissionerate : commissionerateList) {
 			CommissionerateVO commissionerateVO = FormationMapper.commissionerateMappingFromDB(commissionerate);
-			if (null != commissionerate.getZoneId()) {
-				ZoneVO zone = findZoneDetail(String.valueOf(commissionerate.getZoneId().getZoneId()));
+			if (null != commissionerate.getZone()) {
+				ZoneVO zone = findZoneDetail(String.valueOf(commissionerate.getZone().getZoneId()));
 				commissionerateVO.setZoneId(zone.getZoneName());
 				commissionerateVO.setDeptId(String.valueOf(zone.getDepartmentId()));
 			}
@@ -82,8 +82,8 @@ public class CommissionerateServiceImpl implements CommissionerateService {
 		if (CollectionUtils.isNotEmpty(commissionerateList)) {
 			for (Commissionerate commissionerate : commissionerateList) {
 				CommissionerateVO commissionerateVO = FormationMapper.commissionerateMappingFromDB(commissionerate);
-				if (null != commissionerate.getZoneId()) {
-					ZoneVO zone = findZoneDetail(String.valueOf(commissionerate.getZoneId().getZoneId()));
+				if (null != commissionerate.getZone()) {
+					ZoneVO zone = findZoneDetail(String.valueOf(commissionerate.getZone().getZoneId()));
 					commissionerateVO.setZoneId(zone.getZoneName());
 					commissionerateVO.setDeptId(String.valueOf(zone.getDepartmentId()));
 				}
@@ -98,7 +98,7 @@ public class CommissionerateServiceImpl implements CommissionerateService {
 		Commissionerate commissionerate = FormationMapper.commissionerateMappingToDB(commissionerateVO);
 		Zone zone = new Zone();
 		zone.setZoneId(Integer.parseInt(commissionerateVO.getZoneId()));
-		commissionerate.setZoneId(zone);
+		commissionerate.setZone(zone);
 		commissionerateDAO.save(commissionerate);
 		
 	}

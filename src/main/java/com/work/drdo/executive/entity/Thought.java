@@ -33,18 +33,17 @@ public class Thought implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "thought_id")
 	private Integer thoughtId;
+	
 	@Basic(optional = false)
 	@Column(name = "thought_createdAt")
 	private Timestamp createdAt;
+	
 	@Basic(optional = false)
 	@Column(name = "thought_modifyAt")
 	private Timestamp modifyAt;
 	
 	@Column(name = "thought_desciption")
 	private String desciption;
-	
-	/*@OneToOne
-	private UserProfile user;*/
 
 	public Integer getThoughtId() {
 		return thoughtId;
