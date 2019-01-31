@@ -143,17 +143,17 @@ $(document).ready(function() {
 				                             <c:if test="${fn:containsIgnoreCase(activeStatus,'Y')}"> --%>
 				                                <tr>
 				                                    <td>${counter.index+1 + param["page"]*10}</td>
-				                                    <td>${user.profileId.userName}</td>
-				                                    <td>${user.profileId.firstName} ${user.profileId.lastName}</td>
-				                                    <td>${user.profileId.basicDetail.designation}</td>
-				                                    <td>${user.profileId.departmentId.deptName}</td>
-				                                    <%-- <td>${user.profileId.email}</td> --%>
-				                                    <td>${user.profileId.phone}</td>
+				                                    <td>${user.profile.userName}</td>
+				                                    <td>${user.profile.firstName} ${user.profile.lastName}</td>
+				                                    <td>${user.profile.userDesignation.designation}</td>
+				                                    <td>${user.profile.formation.department.deptName}</td>
+				                                    <%-- <td>${user.profile.email}</td> --%>
+				                                    <td>${user.profile.phone}</td>
 				                                    <td>${user.lastLogin}</td>
 				                                    <td>
-				                                        <a class='icon edit' href='javascript:createForm(${user.profileId.profileId});'>Edit</a>
+				                                        <a class='icon edit' href='javascript:createForm(${user.profile.profileId});'>Edit</a>
 				                                        <%-- <a class="icon delete" href="javascript:createDeleteForm(${user.profileId});"></a> --%>
-				                                        | <a class="icon delete" href="javascript:showDeleteModal(${user.profileId.profileId});">Delete</a>
+				                                        | <a class="icon delete" href="javascript:showDeleteModal(${user.profile.profileId});">Delete</a>
 				                                    </td>
 				                                </tr>
 			                               <%--  </c:if>
@@ -230,8 +230,8 @@ function showUpdateConfirmationModal() {
  })
 }
 
- function showDeleteModal(profileId) {
- 	$("#deleteBtn").attr("onclick","createDeleteForm("+profileId+");");
+ function showDeleteModal(profile) {
+ 	$("#deleteBtn").attr("onclick","createDeleteForm("+profile+");");
     $('#deleteConfirmModal').modal({
         backdrop: 'static',
         keyboard: false

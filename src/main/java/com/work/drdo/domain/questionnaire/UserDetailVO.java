@@ -46,7 +46,7 @@ public class UserDetailVO {
 	private String department;
 	private String divisionId;
 
-	private ManPowerVo manpowerDetail;
+	private ManPowerVo manpower;
 	private ProjectVo userProject;
 
 	private List<UserAwardVO> awards;
@@ -510,12 +510,12 @@ public class UserDetailVO {
 		this.divisionId = divisionId;
 	}
 
-	public ManPowerVo getManpowerDetail() {
-		return manpowerDetail;
+	public ManPowerVo getManpower() {
+		return manpower;
 	}
 
-	public void setManpowerDetail(ManPowerVo manpowerDetail) {
-		this.manpowerDetail = manpowerDetail;
+	public void setManpower(ManPowerVo manpower) {
+		this.manpower = manpower;
 	}
 
 	public List<UserAwardVO> getAwards() {
