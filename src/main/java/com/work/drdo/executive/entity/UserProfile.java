@@ -13,7 +13,6 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -181,7 +180,7 @@ public class UserProfile implements Serializable {
     @OneToMany(mappedBy = "createdBy",cascade = {CascadeType.ALL})
     private Collection<UserDiary> userDiarys;
   
-    @OneToMany(mappedBy = "userProfile" ,cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "userProfile" ,cascade = CascadeType.ALL)
     private Collection<UserAward> userAwards;
 	
 

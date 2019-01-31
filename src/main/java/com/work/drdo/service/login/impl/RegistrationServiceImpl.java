@@ -343,7 +343,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 		userProfile.setAddress(address);
 		BasicDetail basicDetail = this.registerBasicDetail(userDetailVO.getBasicDetail());
 		userProfile.setBasicDetail(basicDetail);
-		Manpower manpowerDetail = updateManpowerDetail(userDetailVO.getManpower());
+		Manpower manpowerDetail = updateManpowerDetail(userDetailVO.getManpowerDetail());
 		userProfile.setManpower(manpowerDetail);
 		UserDesignation userDesignation =registerDesignation(userDetailVO.getUserDesignation());
 		userProfile.setUserDesignation(userDesignation);
@@ -377,7 +377,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 		if(basicDetail!=null){
 			userProfile.setBasicDetail(basicDetail);
 		}
-		Manpower manpowerDetail = updateManpowerDetail(userDetailVO.getManpower());
+		Manpower manpowerDetail = updateManpowerDetail(userDetailVO.getManpowerDetail());
 		if(manpowerDetail!=null){
 		   userProfile.setManpower(manpowerDetail);
 		}
@@ -420,7 +420,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 		if (bytes != null && bytes.length > 0) {
 			userProfile.setProfilePic(bytes);
 		}
-		Manpower manpowerDetail = updateManpowerDetail(userDetailVO.getManpower());
+		Manpower manpowerDetail = updateManpowerDetail(userDetailVO.getManpowerDetail());
 		if(manpowerDetail!=null){
 		   userProfile.setManpower(manpowerDetail);
 		}
